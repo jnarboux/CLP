@@ -1,0 +1,35 @@
+% rr (ss) is the transitive, reflexive closure of r (s), so that
+% rr(x,y) holds (only) if x=y or there exists z with r(x,z) and rr(z,y),
+% that is, rr-paths (ss paths) have length 0 or begin with an r (s) step.
+% To prove P(x,y) for all x,y with rr(x,y) can be done inductively
+% by proving P(x,x) and r(x,y) /\ P(y,z) => P(x,y) for all x,y,z,
+% similarly for ss.
+% If relation s extends r, then ss extends rr, and if rr extends s
+% then rr also extends ss (the latter is proved in srr.in)
+% this is essentially Exc. 1.3.1(ii) from Terese, TRS, ISBN 0521391156
+
+:- dynamic e/2,r/2,s/2,rr/2,ss/2.
+
+name(srr).
+
+dom(a). dom(b). 
+
+_ axiom ss_a_b   :(true => ss(a,b)).
+_ axiom toprove  :(rr(a,b) => goal).
+
+%_ axiom ref_e(X) :(dom(X) => e(X,X)).
+%_ axiom sym_e(X,Y) :(e(X,Y) => e(Y,X)).
+%_ axiom trans_e(X,Y,Z) :(e(X,Y),e(Y,Z) => e(X,Z)).
+_ axiom e_in_ss(X,Y) :(e(X,Y) => ss(X,Y)).
+%_ axiom s_in_ss(X,Y) :(s(X,Y) => ss(X,Y)).
+%_ axiom trans_ss(X,Y,Z) :(ss(X,Y),ss(Y,Z) => ss(X,Z)).
+_ axiom e_in_rr(X,Y) :(e(X,Y) => rr(X,Y)).
+%_ axiom r_in_rr(X,Y) :(r(X,Y) => rr(X,Y)).
+_ axiom trans_rr(X,Y,Z) :(rr(X,Y),rr(Y,Z) => rr(X,Z)).
+%rr extends s
+_ axiom s_in_rr(X,Y) :(s(X,Y) => rr(X,Y)).
+%induction hypothesis
+_ axiom ih_ss_in_rr(X,Y) :(s(a,X),ss(X,Y) => rr(X,Y)).
+%ss-path has length 0 or starts with s step
+_ axiom e_or_sss(X,Y) :(ss(X,Y) => e(X,Y);dom(Z),s(X,Z),ss(Z,Y)). 
+

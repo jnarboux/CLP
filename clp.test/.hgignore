@@ -1,0 +1,9 @@
+syntax:glob
+CL/CL.pl
+Colog/colog.jar
+CL/tmp
+leancop/*.pl
+leancop/*.sh
+leancop/ReadMe_leancop
+leancop/TMP*
+res*.txt

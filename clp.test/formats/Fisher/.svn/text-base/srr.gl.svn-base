@@ -1,0 +1,19 @@
+
+true => dom(a), dom(b). 
+
+true => ss(a,b).
+rr(a,b) => goal.
+
+dom(X) => e(X,X).
+e(X,Y) => e(Y,X).
+e(X,Y),e(Y,Z) => e(X,Z).
+e(X,Y) => ss(X,Y).
+s(X,Y) => ss(X,Y).
+ss(X,Y),ss(Y,Z) => ss(X,Z).
+e(X,Y) => rr(X,Y).
+r(X,Y) => rr(X,Y).
+rr(X,Y),rr(Y,Z) => rr(X,Z).
+s(X,Y) => rr(X,Y).
+s(a,X),ss(X,Y) => rr(X,Y).
+ss(X,Y) => e(X,Y);dom(Z),s(X,Z),ss(Z,Y). 
+

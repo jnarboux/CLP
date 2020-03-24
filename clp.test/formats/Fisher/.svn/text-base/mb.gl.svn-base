@@ -1,0 +1,13 @@
+
+true => dom(a), dom(b), dom(c), dom(d).
+
+ p(a,b) => goal.
+ q(c,d) => goal.
+
+ p(X,Y) => p(Y,X).
+ q(X,Y) => q(Y,X).
+ p(X,Y),p(Y,Z) => p(X,Z).
+ q(X,Y),q(Y,Z) => q(X,Z).
+
+ dom(X),dom(Y) => p(X,Y);q(X,Y).
+

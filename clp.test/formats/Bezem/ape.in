@@ -1,0 +1,30 @@
+:- dynamic fixp/1,eq/2,f/2,pq/1,p/1,q/1.
+
+% problem: if f has a fixed point, then
+% all X. p(X) \/ q(X)
+% all X. p(X) => q(f(X))
+% all X. q(X) => p(f(X))
+% imply
+% exists X. p(X) /\ q(X)
+
+name(ap).
+
+%assumptions
+_ axiom start: (true => dom(X),fixp(X)).
+_ axiom ffix(X,Y): (fixp(X),f(X,Y) => eq(X,Y)).
+_ axiom pfq(X,Y): (p(X),f(X,Y) => q(Y)).
+_ axiom qfp(X,Y): (q(X),f(X,Y) => p(Y)).
+_ axiom pep(X,Y): (p(X),eq(X,Y) => p(Y)).
+_ axiom qeq(X,Y): (q(X),eq(X,Y) => q(Y)).
+_ axiom porq(X): (dom(X) => p(X);q(X) ).
+%goal
+_ axiom finish(X): (p(X),q(X) => goal).
+
+% function
+_ axiom func(X):(dom(X) => dom(Y),f(X,Y)).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

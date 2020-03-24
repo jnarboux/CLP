@@ -1,0 +1,10 @@
+name(qedf).
+:- dynamic p/1,r/2,s/2,u/1,v/1.
+dom(a).
+p(a).
+_ axiom qed(X,Y) :(s(X,Y) => goal).
+_ axiom rp(X,Y) :(r(X,Y) => p(Y)).
+_ axiom puv(X) :(p(X) => u(X);v(X)).
+_ axiom us(X) :(u(X) => s(X,A)).
+_ axiom vr(X) :(v(X) => r(X,B)).
+_ axiom ps(X) :(p(X) => s(X,Z)).

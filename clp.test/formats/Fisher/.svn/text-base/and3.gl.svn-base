@@ -1,0 +1,4 @@
+
+
+true => p(p),q(q),r(r).
+r(r),p(p),q(q) => goal.

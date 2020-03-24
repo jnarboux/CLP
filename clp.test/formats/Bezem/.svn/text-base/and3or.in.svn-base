@@ -1,0 +1,11 @@
+name(and3or).
+
+% and3or-example:     p ; q is Prolog syntax for p \/ q
+
+:- dynamic p/0,q/0,r/0.
+
+_ axiom assump  : (true => p,q,r ; q,r,p ; r,p,q).
+
+_ axiom goal_ax  : (r,q,p => goal).
+
+

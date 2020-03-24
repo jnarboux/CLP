@@ -1,0 +1,9 @@
+true => dom(c0), dom(c1). 
+true => p(c0,c0,c0,c0,c0).
+
+p(c1,c1,c1,c1,c1) => goal.
+p(U,X,Y,Z,c0) => p(U,X,Y,Z,c1).
+p(U,X,Y,c0,c1) => p(U,X,Y,c1,c0).
+p(U,X,c0,c1,c1) => p(U,X,c1,c0,c0).
+p(U,c0,c1,c1,c1) => p(U,c1,c0,c0,c0).
+p(c0,c1,c1,c1,c1) => p(c1,c0,c0,c0,c0).

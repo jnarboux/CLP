@@ -1,0 +1,40 @@
+
+ true => dom(b), dom(c), dom(a).
+
+ tEQUALISH(V1,V2), fEQUALISH(V1,V2) => false.
+ tREWRITE(V1,V2), fREWRITE(V1,V2) => false.
+ tTRANSITIVE_REFLEXIVE_REWRITE(V1,V2), fTRANSITIVE_REFLEXIVE_REWRITE(V1,V2) => false.
+
+ fEQUALISH(A,A) => 
+                          false.
+
+ tTRANSITIVE_REFLEXIVE_REWRITE(b,A), tTRANSITIVE_REFLEXIVE_REWRITE(c,A) => 
+                          false.
+
+ true => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(a,b).
+
+ true => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(a,c).
+
+ fEQUALISH(B,A) => 
+                          fEQUALISH(A,B).
+
+ tREWRITE(A,B) => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(A,B).
+
+ tTRANSITIVE_REFLEXIVE_REWRITE(A,B), tTRANSITIVE_REFLEXIVE_REWRITE(B,C) => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(A,C).
+
+%% was: dom(A), dom(B), true => fEQUALISH(A,B); tTRANSITIVE_REFLEXIVE_REWRITE(A,B).
+ dom(A), dom(B) => fEQUALISH(A,B); tTRANSITIVE_REFLEXIVE_REWRITE(A,B).
+
+ tREWRITE(A,B), tREWRITE(A,C) => 
+                          dom(D), tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D).
+
+ tREWRITE(a,A), tTRANSITIVE_REFLEXIVE_REWRITE(A,B), tTRANSITIVE_REFLEXIVE_REWRITE(A,C) => 
+                          dom(D), tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D).
+
+ tTRANSITIVE_REFLEXIVE_REWRITE(A,B), fEQUALISH(A,B) => 
+                          dom(C), tREWRITE(A,C), tTRANSITIVE_REFLEXIVE_REWRITE(C,B).
+

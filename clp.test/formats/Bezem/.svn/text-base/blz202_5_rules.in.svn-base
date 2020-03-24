@@ -1,0 +1,20 @@
+e(V0), e(V1) => r( V0, V1 ). 
+dom(V0), dom(V1) => e(V0) ; e(V1) ; r(V0,V1).
+
+   r(V0,V1) => dom(V2), s(V0,V1,V2).
+   s(V0,V1,V2) => e(V2).
+   s(V0,V1,V2) => ss(V2,V0,V1).
+
+   ss(V2,V0,V1), ss(V3,V0,V1), V2 != V3 => goal.
+
+   => dom(V0), sk(V0).
+
+   sk(V0), e(V1) => dom(V2) , alpha(V0,V1,V2).
+
+   alpha(V0,V1,V2) => ss(V2,V0,V0).
+   alpha(V0,V1,V1) => goal.
+
+
+   alpha( V0, V0, V1 ) => goal. 
+
+

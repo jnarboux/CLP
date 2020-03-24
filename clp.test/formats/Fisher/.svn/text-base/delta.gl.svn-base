@@ -1,0 +1,12 @@
+true => dom(a).
+true => t_phi_2.
+p_2(X),notp_2(X) => false.
+p_1(X),notp_1(X) => false.
+dom(X),t_phi_2 => t_or_2(X).
+t_or_2(X) => t_phi_1 ; t_and_2(X).
+t_and_2(X) => p_2(X),t_ex_2.
+t_ex_2 => dom(Y),notp_2(Y).
+dom(X),t_phi_1 => t_or_1(X).
+t_or_1(X) => t_and_1(X).
+t_and_1(X) => p_1(X),t_ex_1.
+t_ex_1 => dom(Y),notp_1(Y).

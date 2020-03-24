@@ -1,0 +1,12 @@
+true => dom(a). 
+
+h(a,X) => goal.
+
+j(X,Y) => p(X,Y).
+g(X,Y) => p(X,Y).
+p(X,Y),j(Y,Z) => h(X,Z).
+p(X,Y),g(Y,Z) => h(X,Z).
+
+dom(X) => dom(Y),j(X,Y).
+dom(X) => dom(Y),g(X,Y).
+

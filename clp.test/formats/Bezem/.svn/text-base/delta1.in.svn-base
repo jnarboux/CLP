@@ -1,0 +1,34 @@
+name(delta).
+
+:- dynamic t_phi_1/0, t_phi_2/0, p_1/1, notp_1/1, p_2/1, notp_2/1,t_imp_1/1,t_imp_2/1.
+:- dynamic t_or_1/1, t_or_2/1, t_and_1/1, t_and_2/1, t_ex_1/0, t_ex_2/0.
+
+_ axiom start: (true => t_phi_2).
+
+_ axiom pnnp_2(X): (p_2(X),notp_2(X) => false).
+_ axiom pnnp_1(X): (p_1(X),notp_1(X) => false).
+
+_ axiom ax_phi_2(X):(dom(X),t_phi_2 => t_or_2(X)).
+
+_ axiom ax_or_2(X):(t_or_2(X) => t_phi_1 ; t_and_2(X)).
+
+_ axiom ax_and_2(X): (t_and_2(X) => p_2(X),t_ex_2).
+
+_ axiom ax_imp_2(Y):(t_imp_2(Y),t_ex_2 => dom(Y),notp_2(Y)).
+
+_ axiom ax_ex_2:(true => dom(Y),t_imp_2(Y)).
+
+% copy the last four clauses and decrement the index
+
+_ axiom ax_phi_1(X):(dom(X),t_phi_1 => t_or_1(X)).
+
+_ axiom ax_or_1(X):(t_or_1(X) => false ; t_and_1(X)).
+
+_ axiom ax_and_1(X):(t_and_1(X) => p_1(X),t_ex_1).
+
+_ axiom ax_ex_1:(t_ex_1 => dom(Y),notp_1(Y)).
+
+_ axiom ax_imp_1(Y):(t_imp_1(Y),t_ex_1 => dom(Y),notp_1(Y)).
+
+_ axiom ax_ex_1:(true => dom(Y),t_imp_1(Y)).
+

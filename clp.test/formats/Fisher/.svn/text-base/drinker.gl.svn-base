@@ -1,0 +1,6 @@
+
+true => dom(a).
+
+d(X),notd(X) => false.
+dom(X) => d(X),neg_psi(fact).
+neg_psi(fact) => dom(Y),notd(Y).

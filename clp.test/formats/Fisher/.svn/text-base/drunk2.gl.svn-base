@@ -1,0 +1,14 @@
+true => dom(a).
+
+tNEG_PSI0, fNEG_PSI0 => goal.
+tGOAL0, fGOAL0 => goal.
+tNOTD1(V1), fNOTD1(V1) => goal.
+tD1(V1), fD1(V1) => goal.
+
+true => f_IMP_001.
+f_IMP_001 => fGOAL0,  t_FORALL_007, t_FORALL_005, t_IMP_003.
+t_IMP_003 => fNEG_PSI0; t_EXISTS_004.
+dom(A), t_FORALL_005 =>  tD1(A), tNEG_PSI0.
+dom(A), t_FORALL_007 =>  tGOAL0; fD1(A); fNOTD1(A).
+
+t_EXISTS_004 => dom(A), tNOTD1(A).

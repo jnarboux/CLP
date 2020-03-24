@@ -1,0 +1,49 @@
+[ What ]
+
+this is a small script to benchmark some provers for
+geometric logic on a set of formulas created by M. Bezem
+and J. Fisher.
+
+
+
+[ Requirements ]
+
+to run the script 'bench.pl' you need:
+
+* Perl          [http://www.perl.org]
+* clp           [http://code.google.com/p/clp]
+* Java          [http://www.java.com]
+* SWI Prolog    [http://www.swi-prolog.org]
+* Vampire       [http://www.vprover.org] (the runtime must be renamed to "vampire" and be on the path)
+* E             [http://www4.informatik.tu-muenchen.de/~schulz/E/E.html] (the runtime eprover must be on the path)
+* Colog         [http://johnrfisher.net/colog/] (put colog.jar in the folder "Colog")
+* CL.pl         [http://www.cs.vu.nl/~diem/research/ht/index.html] (put CL.pl in a subfolder "CL". Remove the line containing "enabled" and "next")
+* leanCop       [http://leancop.de] (Extract the archive into the folder leancop)
+* Geo           [http://www.ii.uni.wroc.pl/~nivelle/software/geo/] (The executable "geo" must be on the path)	
+
+Perl needs these modules in order to work:
+
+ Switch;
+ Proc::Reliable;
+ Getopt::Long;
+ Term::ANSIColor;
+ Time::HiRes;
+
+
+this module is not typically installed:
+
+    Proc::Reliable
+
+to install it module through cpan:
+
+    cpan> install Proc::Reliable
+
+or on debian based systems:
+
+   sudo apt-get install libproc-reliable-perl
+
+
+
+[ TODO ]
+
+write results to other formats..

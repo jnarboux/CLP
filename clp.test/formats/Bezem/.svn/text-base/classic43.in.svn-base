@@ -1,0 +1,28 @@
+% Problem 43 of Isabelle's Classic Benchmarks:
+% q(X,Y) = all z (p(z,x) = p(z,y))  => q symmetric
+
+name(c43isa).
+
+:- dynamic p/2,q/2,np/2,nq/2,r/3.
+
+% domain elements a,b
+dom(a). dom(b). 
+
+_ axiom assump : (true => q(a,b)).
+_ axiom done: (q(b,a) => goal).
+
+% equality axioms
+_ axiom ifq1(X,Y,Z) :(q(X,Y),p(Z,X) => p(Z,Y)).
+_ axiom ifq2(X,Y,Z) :(q(X,Y),p(Z,Y) => p(Z,X)).
+_ axiom ifnq(X,Y) :(nq(X,Y) => dom(Z),r(X,Y,Z)).
+_ axiom rpnp(X,Y,Z) :(r(X,Y,Z) => p(Z,X),np(Z,Y) ; p(Z,Y),np(Z,X)).
+
+% definitions of np
+_ axiom npnp(X,Y) :(p(X,Y),np(X,Y) => false).
+_ axiom ponp(X,Y) :(dom(X),dom(Y) => p(X,Y);np(X,Y)).
+
+% definitions of nq
+_ axiom nqnq(X,Y) : (q(X,Y),nq(X,Y) => false).
+_ axiom qonq(X,Y) :(dom(X),dom(Y) => q(X,Y);nq(X,Y)).
+
+% axiom nonempty:(true => dom(X)).

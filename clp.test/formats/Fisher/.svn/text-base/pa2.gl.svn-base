@@ -1,0 +1,10 @@
+true => dom(c0), dom(x), nat(c0), nat(x).
+
+my_plus(X,Y,Z),notplus(X,Y,Z) => false.
+nat(X) => my_plus(X,c0,X).
+nat(X) => my_plus(c0,X,X).
+my_plus(X,Y,Z),s(Y,Y1),s(Z,Z1) => my_plus(X,Y1,Z1).
+
+nat(X),my_plus(c0,c0,c0) => my_plus(c0,X,X) ;
+                            dom(X),dom(Y),my_plus(c0,X,X),s(X,Y),notplus(c0,Y,Y).
+nat(X) => dom(Y),nat(Y),s(X,Y).

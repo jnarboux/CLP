@@ -1,0 +1,25 @@
+% Peano Arithmetic
+
+name(dpe).
+
+:- dynamic nat/1,s/2,plus/3.
+
+% domain elements 0
+dom(0).
+
+_ axiom null          :(true => nat(0)).
+
+_ axiom plusnull(X)   :(nat(X) => plus(X,0,X)).
+_ axiom plussucc(X,Y,Z,Y1,Z1): (plus(X,Y,Z),s(Y,Y1),s(Z,Z1) => plus(X,Y1,Z1)).
+
+_ axiom induction_instance():(nat(X),plus(0,0,0) => plus(0,X,X) ;
+                              dom(X),dom(Y),plus(0,X,X),s(X,Y),notplus(0,Y,Y)).
+
+%_ axiom notplus(X,Y,Z):().
+
+
+_ axiom succ(X)   :(nat(X) => dom(y),nat(y),s(X,Y)).
+
+
+
+

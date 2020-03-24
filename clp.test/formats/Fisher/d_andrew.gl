@@ -1,0 +1,31 @@
+
+
+%1 fof(d_cons,axiom, ! [A]:((d(A) & notd(A)) => (goal))).
+%2 fof(neg_phi,axiom, ! [A]:(((d(A) & neg_psi)))).
+%3 fof(neg_psi_ax,axiom, ((neg_psi) => (? [A] : (notd(A))))).
+%4 fof(goal_to_be_proved,conjecture,goal).
+
+
+
+true => dom(a).
+
+true => fGOAL0(fact).
+
+tNEG_PSI0(fact), fNEG_PSI0(fact) => goal.
+tGOAL0(fact), fGOAL0(fact) => goal.
+tNOTD1(V1), fNOTD1(V1) => goal.
+tD1(V1), fD1(V1) => goal.
+
+true => f_IMP_001(fact).
+f_IMP_001(fact) => t_AND_002(fact), fGOAL0(fact).
+t_AND_002(fact) => t_FORALL_007(fact), t_FORALL_005(fact), t_IMP_003(fact).
+
+dom(A) => t_AND_006(A).
+t_AND_006(A) => tD1(A), tNEG_PSI0(fact).
+dom(A) => t_IMP_008(A).
+t_IMP_008(A) => f_AND_009(A); tGOAL0(fact).
+f_AND_009(A) => fD1(A); fNOTD1(A).
+%converted from true to dom(a) which should be true :-)
+dom(a) => fNEG_PSI0(fact); t_EXISTS_004(fact).
+t_EXISTS_004(fact) => dom(A), tNOTD1(A).
+

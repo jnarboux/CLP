@@ -1,0 +1,72 @@
+%% Total mass: 32.0
+
+name(p43).
+
+:- dynamic tAnd_7/3.
+:- dynamic tAnd_5/3.
+
+
+:- dynamic tAnd_22/2.
+
+:- dynamic tAnd_29/2.
+:- dynamic fOr_28/2.
+:- dynamic fAnd_14/2.
+:- dynamic fForall_12/2.
+:- dynamic fOr_10/3.
+:- dynamic tOr_17/3.
+:- dynamic fAnd_6/3.
+:- dynamic tOr_15/3.
+:- dynamic tOr_25/2.
+:- dynamic tExists_21/2.
+:- dynamic tP/2.
+:- dynamic tQ/2.
+:- dynamic fP/2.
+:- dynamic fQ/2.
+
+% axiom consts: (true => dom(g0d)).
+
+_ axiom botP(V1,V2):            (tP(V1,V2), fP(V1,V2) => false).
+_ axiom botQ(V1,V2):            (tQ(V1,V2), fQ(V1,V2) => false).
+
+_ axiom ax00(Y,X):   (tAnd_29(Y,X), fOr_28(Y,X) => 
+                          false).
+
+_ axiom ax01(X,Y):   (fAnd_14(X,Y) => 
+                          tAnd_22(X,Y), fQ(X,Y), tExists_21(X,Y)).
+
+_ axiom ax02(X,Y):   (fQ(X,Y) => 
+                          fAnd_14(X,Y)).
+
+_ axiom ax03(X,Y):   (fForall_12(X,Y) => 
+                          fAnd_14(X,Y)).
+
+_ axiom ax04(X,Z,Y): (fOr_10(X,Z,Y) => 
+                          fForall_12(X,Y)).
+
+_ axiom ax05(X,Z,Y): (tOr_17(X,Z,Y), fP(Z,Y) => 
+                          tP(Z,X)).
+
+_ axiom ax06(X,Z,Y): (fAnd_6(X,Z,Y) => 
+                          fOr_10(X,Z,Y); tAnd_7(X,Z,Y), fP(Z,X), fP(Z,Y)).
+
+_ axiom ax07(X,Z,Y): (tOr_15(X,Z,Y) => 
+                          fP(Z,X); fP(Z,Y)).
+
+_ axiom ax08(Y,X):   (tOr_25(Y,X) => 
+                          fQ(X,Y); fQ(Y,X)).
+
+_ axiom ax09(Y,X):   (fQ(Y,X) => 
+                          fOr_28(Y,X); tQ(X,Y)).
+
+_ axiom ax10(Y,Z,X): (dom(Y), fP(Z,X) => 
+                          fAnd_6(X,Z,Y)).
+
+_ axiom ax11(X,Z,Y): (dom(X), fP(Z,Y) => 
+                          fAnd_6(X,Z,Y)).
+
+_ axiom ax12(Z,X,Y): (tExists_21(X,Y) => 
+                          dom(Z), tOr_15(X,Z,Y), tOr_17(X,Z,Y)).
+
+_ axiom ax13(Y,X):   (true => 
+                          dom(Y), dom(X), tAnd_29(Y,X), tOr_25(Y,X)).
+

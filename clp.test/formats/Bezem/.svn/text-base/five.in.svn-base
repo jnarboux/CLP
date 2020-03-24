@@ -1,0 +1,46 @@
+:- dynamic ep/2,el/2,pl/2,neq/2.
+
+name(five).
+
+%points
+dom(a). dom(b). dom(c). dom(d). 
+
+%assumptions
+_ axiom start: (true => ep(a,a), ep(b,b), ep(c,c), ep(d,d)).
+_ axiom neqax: (true => neq(a,b),neq(a,c),neq(a,d),neq(b,c),neq(b,d),neq(c,d)).
+
+%goal
+_ axiom goal_ax(L,X,Y,Z): (el(L,L),neq(X,Y),neq(Y,Z),neq(X,Z),
+                                       pl(X,L), pl(Y,L),pl(Z,L) => goal).
+
+%equality for points
+_ axiom pref(P,L)   :  (pl(P,L) => ep(P,P)).     %a bit special indeed!
+_ axiom psym(P,Q)   :  (ep(P,Q) => ep(Q,P)).
+_ axiom ptra(P,Q,R) :  (ep(P,Q),ep(Q,R) => ep(P,R)).
+_ axiom pneq(P,Q)   :  (ep(P,Q),neq(P,Q) => false).
+_ axiom sneq(P,Q)   :  (neq(P,Q) => neq(Q,P)).
+_ axiom pdec(P,Q)   :  (ep(P,P),ep(Q,Q) => ep(P,Q) ; neq(P,Q)).
+
+%equality for lines
+_ axiom lref(P,L)   :  (pl(P,L) => el(L,L)).     %a bit special indeed!
+_ axiom lsym(L,M)   :  (el(L,M) => el(M,L)).
+_ axiom ltra(L,M,N) :  (el(L,M),el(M,N) => el(L,N)).
+%_ axiom lneq(P,Q)   :  (ep(P,Q),neq(P,Q) => false).
+
+%congruence
+_ axiom pcon(P,Q,L) :  (ep(P,Q),pl(Q,L) => pl(P,L)).
+_ axiom lcon(P,L,M) :  (pl(P,L),el(L,M) => pl(P,M)).
+
+%projective uniqueness
+_ axiom unique(P,L,M,Q):(pl(P,L),pl(P,M),pl(Q,L),pl(Q,M) => ep(P,Q); el(L,M)).
+
+%projective incidence axiom
+line(P,Q) axiom line(P,Q) : (ep(P,P),ep(Q,Q) => dom(L),pl(P,L),pl(Q,L)).
+
+%projective incidence axiom
+_ axiom point(L,M) : (el(L,L),el(M,M) => dom(P),pl(P,L),pl(P,M)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+enabled(line(P,Q),[]) :- member(P,[a,b,c,d]),member(Q,[a,b,c,d]),P \= Q.
+next(line(_,_),[],[]).

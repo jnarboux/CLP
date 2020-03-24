@@ -1,0 +1,28 @@
+
+true => dom(c0), dom(c1). 
+
+true => bin_count(c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+
+bin_count(c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => goal.
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,c0) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,c1).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,c0,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,c1,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,c0,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,c1,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,c0,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,c1,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,c0,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,c1,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,c0,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,c1,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,c0,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,c1,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,L,c0,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,c1,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,K,c0,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,c1,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,J,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,J,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,I,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,I,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,H,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,H,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,G,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,G,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,F,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,F,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,E,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,E,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,D,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,D,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,C,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,C,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,B,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,B,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(A,c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(A,c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+bin_count(c0,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1,c1) => bin_count(c1,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0,c0).
+
+

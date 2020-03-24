@@ -1,0 +1,18 @@
+% Problem 43 of Isabelle's Classic Benchmarks:
+% q(X,Y) = all z (p(z,x) = p(z,y))  => q symmetric
+
+true => dom(a), dom(b). 
+true => q(a,b).
+q(b,a) => goal.
+
+q(X,Y),p(Z,X) => p(Z,Y).
+q(X,Y),p(Z,Y) => p(Z,X).
+nq(X,Y) => dom(Z),r(X,Y,Z).
+r(X,Y,Z) => p(Z,X),np(Z,Y) ; p(Z,Y),np(Z,X).
+
+p(X,Y),np(X,Y) => false.
+dom(X),dom(Y) => p(X,Y);np(X,Y).
+
+q(X,Y),nq(X,Y) => false.
+dom(X),dom(Y) => q(X,Y);nq(X,Y).
+

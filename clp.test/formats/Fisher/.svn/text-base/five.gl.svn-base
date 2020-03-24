@@ -1,0 +1,29 @@
+
+true => dom(a), dom(b), dom(c), dom(d). 
+
+true => ep(a,a), ep(b,b), ep(c,c), ep(d,d).
+true => neq(a,b),neq(a,c),neq(a,d),neq(b,c),neq(b,d),neq(c,d).
+
+el(L,L),neq(X,Y),neq(Y,Z),neq(X,Z), pl(X,L), pl(Y,L),pl(Z,L) => goal.
+
+pl(P,L) => ep(P,P) .
+ep(P,Q) => ep(Q,P) .
+ep(P,Q),ep(Q,R) => ep(P,R) .
+ep(P,Q),neq(P,Q) => false .
+neq(P,Q) => neq(Q,P) .
+ep(P,P),ep(Q,Q) => ep(P,Q) ; neq(P,Q) .
+
+pl(P,L) => el(L,L).     %a bit special indeed!
+el(L,M) => el(M,L).
+el(L,M),el(M,N) => el(L,N).
+ep(P,Q),neq(P,Q) => false.
+
+ep(P,Q),pl(Q,L) => pl(P,L).
+pl(P,L),el(L,M) => pl(P,M).
+
+pl(P,L),pl(P,M),pl(Q,L),pl(Q,M) => ep(P,Q); el(L,M).
+
+ep(P,P),ep(Q,Q) => dom(L),pl(P,L),pl(Q,L).
+
+el(L,L),el(M,M) => dom(P),pl(P,L),pl(P,M).
+

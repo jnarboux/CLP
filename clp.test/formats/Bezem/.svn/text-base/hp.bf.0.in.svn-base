@@ -1,0 +1,156 @@
+%% Total mass: 15.0
+
+name('hp.bf.0').
+
+:- dynamic tAnd_19/1.
+:- dynamic fForall_18/1.
+:- dynamic tAnd_36/1.
+:- dynamic fForall_35/1.
+:- dynamic tAnd_44/3.
+:- dynamic tAnd_48/3.
+:- dynamic tAnd_59/3.
+:- dynamic fOr_58/3.
+:- dynamic tAnd_63/3.
+:- dynamic fOr_62/3.
+:- dynamic fOr_69/3.
+:- dynamic tAnd_70/2.
+:- dynamic fOr_16/2.
+:- dynamic fForall_14/2.
+:- dynamic tForall_28/0.
+:- dynamic fOr_33/2.
+:- dynamic fForall_31/2.
+:- dynamic tForall_54/1.
+:- dynamic tAnd_52/3.
+:- dynamic tOr_46/3.
+:- dynamic tForall_76/2.
+:- dynamic tAnd_74/3.
+:- dynamic tOr_50/3.
+:- dynamic tOr_65/3.
+:- dynamic tOr_72/3.
+:- dynamic tOr_26/1.
+:- dynamic tExists_22/2.
+:- dynamic tExists_40/2.
+:- dynamic tALGORITHM/1.
+:- dynamic tDECIDES/3.
+:- dynamic tPROGRAM/1.
+:- dynamic tHALTS3/3.
+:- dynamic tHALTS2/2.
+:- dynamic tOUTPUTS/2.
+:- dynamic fALGORITHM/1.
+:- dynamic fDECIDES/3.
+:- dynamic fPROGRAM/1.
+:- dynamic fHALTS3/3.
+:- dynamic fHALTS2/2.
+:- dynamic fOUTPUTS/2.
+
+_ axiom consts: (true => dom(good), dom(bad)).
+
+_ axiom botALGORITHM(V1):       (tALGORITHM(V1), fALGORITHM(V1) => false).
+_ axiom botDECIDES(V1,V2,V3):   (tDECIDES(V1,V2,V3), fDECIDES(V1,V2,V3) => false).
+_ axiom botPROGRAM(V1):         (tPROGRAM(V1), fPROGRAM(V1) => false).
+_ axiom botHALTS3(V1,V2,V3):    (tHALTS3(V1,V2,V3), fHALTS3(V1,V2,V3) => false).
+_ axiom botHALTS2(V1,V2):       (tHALTS2(V1,V2), fHALTS2(V1,V2) => false).
+_ axiom botOUTPUTS(V1,V2):      (tOUTPUTS(V1,V2), fOUTPUTS(V1,V2) => false).
+
+_ axiom ax00(X1):    (tAnd_19(X1), fForall_18(X1) => 
+                          false).
+
+_ axiom ax01(W):     (tAnd_36(W), fForall_35(W) => 
+                          false).
+
+_ axiom ax02(Y,Z,W): (tAnd_44(Y,Z,W), fOUTPUTS(W,good) => 
+                          false).
+
+_ axiom ax03(Y,Z,W): (tAnd_48(Y,Z,W), fOUTPUTS(W,bad) => 
+                          false).
+
+_ axiom ax04(Y,Z,W): (tAnd_59(Y,Z,W), fOr_58(Y,Z,W) => 
+                          false).
+
+_ axiom ax05(W,Y,Z): (tAnd_63(Y,Z,W), tHALTS2(Y,Z) => 
+                          false).
+
+_ axiom ax06(Y,Z,W): (tAnd_63(Y,Z,W), fOr_62(Y,Z,W) => 
+                          false).
+
+_ axiom ax07(W,V,Y): (tAnd_74(W,Y,V), fOr_69(W,V,Y) => 
+                          false).
+
+_ axiom ax08(Y,V):   (tAnd_70(Y,V), fOUTPUTS(V,bad) => 
+                          false).
+
+_ axiom ax09(X1,Y1): (fOr_16(X1,Y1) => 
+                          fForall_18(X1)).
+
+_ axiom ax10(X1,Y1): (tPROGRAM(Y1), fForall_14(X1,Y1) => 
+                          fOr_16(X1,Y1)).
+
+_ axiom ax11(X1,Y1,Z1): (fDECIDES(X1,Y1,Z1) => 
+                          fForall_14(X1,Y1)).
+
+_ axiom ax12(X):     (dom(X), tForall_28 => 
+                          tOr_26(X)).
+
+_ axiom ax13(W,Y):   (fOr_33(W,Y) => 
+                          fForall_35(W)).
+
+_ axiom ax14(W,Y):   (tPROGRAM(Y), fForall_31(W,Y) => 
+                          fOr_33(W,Y)).
+
+_ axiom ax15(W,Y,Z): (fDECIDES(W,Y,Z) => 
+                          fForall_31(W,Y)).
+
+_ axiom ax16(Y,Z,W): (dom(Y), dom(Z), tForall_54(W) => 
+                          tAnd_52(Y,Z,W)).
+
+_ axiom ax17(Y,Z,W): (tAnd_52(Y,Z,W) => 
+                          tOr_46(Y,Z,W), tOr_50(Y,Z,W)).
+
+_ axiom ax18(W,Y,Z): (tOr_46(Y,Z,W), tPROGRAM(Y), tHALTS2(Y,Z) => 
+                          tAnd_44(Y,Z,W), tHALTS3(W,Y,Z)).
+
+_ axiom ax19(Y,W,V): (dom(Y), tForall_76(W,V) => 
+                          tAnd_74(W,Y,V)).
+
+_ axiom ax20(W,Y,V): (tAnd_74(W,Y,V) => 
+                          tOr_72(W,Y,V)).
+
+_ axiom ax21(Z,W,Y): (tOr_50(Y,Z,W), tPROGRAM(Y) => 
+                          tHALTS2(Y,Z); tAnd_48(Y,Z,W), tHALTS3(W,Y,Z)).
+
+_ axiom ax22(Y,Z,W): (tOr_65(Y,Z,W) => 
+                          tAnd_59(Y,Z,W), tPROGRAM(Y), tHALTS2(Y,Z); tAnd_63(Y,Z,W), tPROGRAM(Y)).
+
+_ axiom ax23(W,Y,Z): (tHALTS3(W,Y,Z) => 
+                          fOr_58(Y,Z,W); fOUTPUTS(W,good)).
+
+_ axiom ax24(W,Y,Z): (tHALTS3(W,Y,Z) => 
+                          fOr_62(Y,Z,W); fOUTPUTS(W,bad)).
+
+_ axiom ax25(W,V,Y): (tPROGRAM(Y), tHALTS3(W,Y,Y), tHALTS2(V,Y) => 
+                          fOr_69(W,V,Y); fOUTPUTS(W,good)).
+
+_ axiom ax26(V,W,Y): (tOr_72(W,Y,V), tPROGRAM(Y), tHALTS3(W,Y,Y) => 
+                          fOUTPUTS(W,bad); tAnd_70(Y,V), tHALTS2(V,Y)).
+
+_ axiom ax27(X1):    (true => 
+                          dom(X1), tAnd_19(X1), tALGORITHM(X1)).
+
+_ axiom ax28(X):     (tOr_26(X), tALGORITHM(X) => 
+                          dom(Y), tPROGRAM(Y), tExists_22(X,Y)).
+
+_ axiom ax29(Z,X,Y): (tExists_22(X,Y) => 
+                          dom(Z), fDECIDES(X,Y,Z)).
+
+_ axiom ax30(Z,W,Y): (tExists_40(W,Y) => 
+                          dom(Z), fDECIDES(W,Y,Z)).
+
+_ axiom ax31:        (true => 
+                          tForall_28; dom(W), tAnd_36(W), tPROGRAM(W)).
+
+_ axiom ax32(W):     (tPROGRAM(W) => 
+                          dom(Y), tPROGRAM(Y), tExists_40(W,Y); tForall_54(W)).
+
+_ axiom ax33(W):     (tPROGRAM(W) => 
+                          dom(Y), dom(Z), tOr_65(Y,Z,W); dom(V), tPROGRAM(V), tForall_76(W,V)).
+

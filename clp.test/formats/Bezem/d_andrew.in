@@ -1,0 +1,49 @@
+name(d).
+
+:- dynamic f_IMP_001/0.
+:- dynamic t_AND_002/0.
+:- dynamic t_IMP_003/0.
+:- dynamic t_EXISTS_004/0.
+:- dynamic t_FORALL_005/0.
+:- dynamic t_AND_006/1.
+:- dynamic t_FORALL_007/0.
+:- dynamic t_IMP_008/1.
+:- dynamic f_AND_009/1.
+:- dynamic tNEG_PSI0/0.
+:- dynamic fNEG_PSI0/0.
+:- dynamic tGOAL0/0.
+:- dynamic fGOAL0/0.
+:- dynamic tNOTD1/1.
+:- dynamic fNOTD1/1.
+:- dynamic tD1/1.
+:- dynamic fD1/1.
+
+
+%1 fof(d_cons,axiom, ! [A]:((d(A) & notd(A)) => (goal))).
+%2 fof(neg_phi,axiom, ! [A]:(((d(A) & neg_psi)))).
+%3 fof(neg_psi_ax,axiom, ((neg_psi) => (? [A] : (notd(A))))).
+%4 fof(goal_to_be_proved,conjecture,goal).
+
+
+
+dom(a).
+
+_ axiom goal_axiom:      (true => fGOAL0).                      %this is 4
+
+_ axiom bot01:             (tNEG_PSI0, fNEG_PSI0 => goal).
+_ axiom bot02:             (tGOAL0, fGOAL0 => goal).
+_ axiom bot03(V1):         (tNOTD1(V1), fNOTD1(V1) => goal).
+_ axiom bot04(V1):         (tD1(V1), fD1(V1) => goal).
+
+% axiom start:           (true => f_IMP_001).
+% axiom ax001:           (f_IMP_001 => t_AND_002, fGOAL0).
+% axiom ax002:           (t_AND_002 => t_FORALL_007, t_FORALL_005, t_IMP_003).
+
+_ axiom ax005(A):        (dom(A) => t_AND_006(A)).              %this is 2
+_ axiom ax006(A):        (t_AND_006(A) => tD1(A), tNEG_PSI0).   %comes from 2
+_ axiom ax007(A):        (dom(A) => t_IMP_008(A)).              %this is 1
+_ axiom ax008(A):        (t_IMP_008(A) => f_AND_009(A); tGOAL0).%comes from 1
+_ axiom ax009(A):        (f_AND_009(A) => fD1(A); fNOTD1(A)).   %comes from 1
+_ axiom ax003:           (true => fNEG_PSI0; t_EXISTS_004).     %this is 3
+_ axiom ax004:           (t_EXISTS_004 => dom(A), tNOTD1(A)).   %comes from 3
+

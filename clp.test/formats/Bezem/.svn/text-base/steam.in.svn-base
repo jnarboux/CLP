@@ -1,0 +1,47 @@
+% Schuberts steamroller
+
+name(steam).
+
+:- dynamic 'Animal'/1,'Wolf'/1,'Fox'/1,'Bird'/1,'Snail'/1,'Caterpillar'/1.
+:- dynamic 'Plant'/1,'Grain'/1.
+:- dynamic eats/2,smaller/2.
+
+%domain elements
+dom(w). dom(f). dom(b). dom(s). dom(c). dom(g).
+
+(_ axiom ([] : Y)) :- Y.
+
+'Animal'(X),'Animal'(Y),eats(X,Y),'Grain'(Z),eats(Y,Z) => goal.
+
+true => 'Wolf'(w).
+true => 'Fox'(f).
+true => 'Bird'(b).
+true => 'Snail'(s).
+true => 'Caterpillar'(c).
+true => 'Grain'(g).
+
+'Wolf'(X) => 'Animal'(X).
+'Fox'(X) => 'Animal'(X).
+'Bird'(X) => 'Animal'(X).
+'Snail'(X) => 'Animal'(X).
+'Caterpillar'(X) => 'Animal'(X).
+'Grain'(X) => 'Plant'(X).
+
+'Caterpillar'(X),'Bird'(Y) => smaller(X,Y).
+'Snail'(X),'Bird'(Y) => smaller(X,Y).
+'Bird'(X),'Fox'(Y) => smaller(X,Y).
+'Fox'(X),'Wolf'(Y) => smaller(X,Y).
+
+'Wolf'(X),'Fox'(Y),eats(X,Y) => false.
+'Wolf'(X),'Grain'(Y),eats(X,Y) => false.
+'Bird'(X),'Snail'(Y),eats(X,Y) => false.
+'Bird'(X),'Caterpillar'(Y) => eats(X,Y).
+
+'Snail'(X) => dom(Y),'Plant'(Y),eats(X,Y).       
+'Caterpillar'(X) => dom(Y),'Plant'(Y),eats(X,Y).
+ 
+'Animal'(X),'Animal'(Y),smaller(Y,X),'Plant'(U),'Plant'(V),eats(Y,V) => eats(X,U) ; eats(X,Y).
+
+%*******************************************************************
+
+

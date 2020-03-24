@@ -1,0 +1,14 @@
+:- dynamic 'F(((p -> q) -> p) -> p)'/0,
+           'T((p -> q) -> p)'/0,
+           'F(p)'/0,
+           'F(p -> q)'/0,
+           'F(p)'/0, 
+           'T(p)'/0.
+
+name(p).
+
+_ axiom start: (true => 'F(((p -> q) -> p) -> p)').
+_ axiom ax_1: ('F(((p -> q) -> p) -> p)' => 'T((p -> q) -> p)','F(p)').
+_ axiom ax_2: ('T((p -> q) -> p)' => 'F(p -> q)' ; 'T(p)').
+_ axiom ax_3: ('F(p -> q)' => 'T(p)','F(q)').
+_ axiom ax_gl: ('F(p)','T(p)' => goal).

@@ -1,0 +1,16 @@
+% Hans de Nivelle's example for eliminating a Skolem function
+
+name(hdn).
+:- dynamic e/2,p/2.
+
+% domain element a
+dom(a). 
+
+_ axiom goal_ax(X,Y): (p(X,Y),p(Y,X) => goal).
+_ axiom congl(X,Y,Z) :(e(X,Y),p(Z,Y) => p(Z,X)).
+_ axiom order_2(X,Y) :(p(X,Y),p(Y,Z) => e(X,Z)).
+_ axiom serial(X) :(dom(X) => dom(f(X)),p(X,f(X))).
+
+_ axiom serial(X) :(dom(X) => dom(Y),p(X,Y)).
+
+

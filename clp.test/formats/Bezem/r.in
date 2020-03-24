@@ -1,0 +1,17 @@
+:- dynamic lt/2,r/2,g/2.
+
+name(r).
+
+dom(n1). dom(n2). dom(n3). dom(n4). dom(n5). dom(n6). 
+_ axiom rclique(X,Y,Z) : (r(X,Y),r(Y,Z),r(X,Z) => false).
+_ axiom gclique(X,Y,Z) : (g(X,Y),g(Y,Z),g(X,Z) => false).
+_ axiom no_overlap(X,Y) : (r(X,Y),g(X,Y) => false).
+_ axiom ordering : (true => lt(n1,n2),lt(n2,n3),lt(n3,n4),lt(n4,n5),lt(n5,n6)).
+_ axiom eq_tran(X,Y,Z) : (lt(X,Y),lt(Y,Z) => lt(X,Z)).
+_ axiom partition(X,Y) : (lt(X,Y) => r(X,Y);g(X,Y)).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

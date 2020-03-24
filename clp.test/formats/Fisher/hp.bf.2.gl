@@ -1,0 +1,48 @@
+
+true => dom(good), dom(bad).
+true => helper1 .
+helper1 => dom(X1), tAnd_19(X1), tForall_17(X1).
+
+true => helper2.
+helper2 => tForall_28; dom(W), tAnd_36(W), tPROGRAM(W).
+
+tALGORITHM(V1), fALGORITHM(V1) => false.
+tDECIDES(V1,V2,V3), fDECIDES(V1,V2,V3) => false.
+tPROGRAM(V1), fPROGRAM(V1) => false.
+tHALTS3(V1,V2,V3), fHALTS3(V1,V2,V3) => false.
+tHALTS2(V1,V2), fHALTS2(V1,V2) => false.
+tOUTPUTS(V1,V2), fOUTPUTS(V1,V2) => false.
+
+tAnd_19(X1), fALGORITHM(X1) => false.
+tOr_15(X1,Y1), tPROGRAM(Y1), fForall_14(X1,Y1) => false.
+tAnd_36(W), fForall_35(W) => false.
+tAnd_44(Y,Z,W), fOUTPUTS(W,good) => false.
+tAnd_48(Y,Z,W), fOUTPUTS(W,bad) => false.
+tAnd_59(Y,Z,W), fOr_58(Y,Z,W) => false.
+tAnd_63(Y,Z,W), tHALTS2(Y,Z) =>  false.
+tAnd_63(Y,Z,W), fOr_62(Y,Z,W) => false.
+tAnd_74(W,Y,V), fOr_69(W,V,Y) => false.
+tAnd_70(Y,V), fOUTPUTS(V,bad) => false.
+dom(Y1), tForall_17(X1) => tOr_15(X1,Y1).
+fDECIDES(X1,Y1,Z1) => fForall_14(X1,Y1).
+dom(X), tForall_28 => tOr_26(X).
+fOr_33(W,Y) => fForall_35(W).
+tPROGRAM(Y), fForall_31(W,Y) => fOr_33(W,Y).
+fDECIDES(W,Y,Z) => fForall_31(W,Y).
+dom(Y), dom(Z), tForall_54(W) => tAnd_52(Y,Z,W).
+tAnd_52(Y,Z,W) =>  tOr_46(Y,Z,W), tOr_50(Y,Z,W).
+tOr_46(Y,Z,W), tPROGRAM(Y), tHALTS2(Y,Z) => tAnd_44(Y,Z,W), tHALTS3(W,Y,Z).
+dom(Y), tForall_76(W,V) => tAnd_74(W,Y,V).
+tAnd_74(W,Y,V) => tOr_72(W,Y,V).
+tOr_50(Y,Z,W), tPROGRAM(Y) => tHALTS2(Y,Z); tAnd_48(Y,Z,W), tHALTS3(W,Y,Z).
+tOr_65(Y,Z,W) => tAnd_59(Y,Z,W), tPROGRAM(Y), tHALTS2(Y,Z); tAnd_63(Y,Z,W), tPROGRAM(Y).
+tHALTS3(W,Y,Z) =>  fOr_58(Y,Z,W); fOUTPUTS(W,good).
+tHALTS3(W,Y,Z) => fOr_62(Y,Z,W); fOUTPUTS(W,bad).
+tPROGRAM(Y), tHALTS3(W,Y,Y), tHALTS2(V,Y) => fOr_69(W,V,Y); fOUTPUTS(W,good).
+tOr_72(W,Y,V), tPROGRAM(Y), tHALTS3(W,Y,Y) => fOUTPUTS(W,bad); tAnd_70(Y,V), tHALTS2(V,Y).
+tExists_22(X,Y) => dom(Z), fDECIDES(X,Y,Z).
+tExists_40(W,Y) => dom(Z), fDECIDES(W,Y,Z).
+tOr_26(X) => fALGORITHM(X); dom(Y), tPROGRAM(Y), tExists_22(X,Y).
+tPROGRAM(W) => dom(Y), tPROGRAM(Y), tExists_40(W,Y); tForall_54(W).
+tPROGRAM(W) => dom(Y), dom(Z), tOr_65(Y,Z,W); dom(V), tPROGRAM(V), tForall_76(W,V).
+

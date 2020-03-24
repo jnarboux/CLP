@@ -1,0 +1,12 @@
+true => dom(o).
+
+p(X),lesS(X,Y),p(Y) => false.
+
+dom(X) => p(X) ; dom(Y),lesS(X,Y),p(Y). 
+
+
+lesS(X,Y),lesS(Y,Z) => lesS(X,Z).
+
+dom(X) => dom(Y),lesS(X,Y). % last!
+
+

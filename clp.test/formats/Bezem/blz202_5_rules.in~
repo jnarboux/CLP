@@ -1,0 +1,31 @@
+
+
+%predicates
+   E/1.
+   S/3.
+
+   r/2, s/3.
+   alpha/3.
+   Sk/1.
+
+%rulesystem
+   E(V0) /\ E(V1) -> r( V0, V1 ). 
+   # V0 /\ # V1 -> E(V0) \/ E(V1) \/ r(V0,V1).
+
+   r(V0,V1) -> # V2 /\ s(V0,V1,V2).
+   s(V0,V1,V2) -> E(V2).
+   s(V0,V1,V2) -> S(V2,V0,V1).
+
+   S(V2,V0,V1) /\ S(V3,V0,V1) /\ V2 != V3 -> .
+
+   -> # V0 /\ Sk(V0).
+
+   Sk(V0) /\ E(V1) -> # V2 /\ alpha(V0,V1,V2).
+
+   alpha(V0,V1,V2) -> S(V2,V0,V0).
+   alpha(V0,V1,V1) -> .
+
+
+   alpha( V0, V0, V1 ) -> . 
+
+

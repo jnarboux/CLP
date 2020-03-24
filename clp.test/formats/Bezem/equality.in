@@ -1,0 +1,29 @@
+% equality example
+
+%(_ axiom ([] : Y)) :- Y.
+
+name(eq).
+
+:- dynamic eq/2,p/5.
+
+%domain elements
+
+dom(b). dom(a). dom(c).
+
+_ axiom paaaaa : (true => p(a,a,a,a,a)).
+
+_ axiom pbbbbb : (p(b,b,b,b,b) => goal).
+
+_ axiom eqab : (true => eq(a,b)).
+
+
+_ axiom congruence1(X,Y,Z2,Z3,Z4,Z5) : (eq(X,Y),p(X,Z2,Z3,Z4,Z5) => p(Y,Z2,Z3,Z4,Z5)).
+_ axiom congruence2(X,Y,Z2,Z3,Z4,Z5) : (eq(X,Y),p(Z2,X,Z3,Z4,Z5) => p(Z2,Y,Z3,Z4,Z5)).
+_ axiom congruence3(X,Y,Z2,Z3,Z4,Z5) : (eq(X,Y),p(Z2,Z3,X,Z4,Z5) => p(Z2,Z3,Y,Z4,Z5)).
+_ axiom congruence4(X,Y,Z2,Z3,Z4,Z5) : (eq(X,Y),p(Z2,Z3,Z4,X,Z5) => p(Z2,Z3,Z4,Y,Z5)).
+_ axiom congruence5(X,Y,Z2,Z3,Z4,Z5) : (eq(X,Y),p(Z2,Z3,Z4,Z5,X) => p(Z2,Z3,Z4,Z5,Y)).
+
+
+
+
+

@@ -1,0 +1,37 @@
+name(dpe).
+
+:- dynamic tREFLEXIVE_REWRITE/2,tREWRITE/2,tAnd_35/3,tEQUALISH/2,tExists_37/2,tGOAL/0.
+
+% domain elements a,b,c
+
+%% Total mass: 1.3999996
+
+dom(x). dom(y). dom(z).
+
+_ axiom x:(tREFLEXIVE_REWRITE(y,A), tREFLEXIVE_REWRITE(z,A) => 
+              false).
+
+_ axiom x:(true => 
+              tREFLEXIVE_REWRITE(x,y), tREFLEXIVE_REWRITE(x,z)).
+
+_ axiom x:(tREWRITE(A,B) => 
+              tREFLEXIVE_REWRITE(A,B)).
+
+_ axiom x:(tEQUALISH(A,B) => 
+              tREFLEXIVE_REWRITE(A,B)).
+
+_ axiom x:(tEQUALISH(A,B), tREFLEXIVE_REWRITE(B,C) => 
+              tREFLEXIVE_REWRITE(A,C)).
+
+_ axiom x:(tEQUALISH(A,B) => 
+              tEQUALISH(B,A)).
+
+_ axiom x:(dom(A), true => 
+              tEQUALISH(A,A)).
+
+_ axiom x:(tREFLEXIVE_REWRITE(A,B) => 
+              tEQUALISH(A,B); tREWRITE(A,B)).
+
+_ axiom x:(tREWRITE(A,B), tREWRITE(A,C) => 
+              dom(D), tREWRITE(B,D), tREWRITE(C,D)).
+

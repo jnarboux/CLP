@@ -1,0 +1,22 @@
+
+true => dom(x), dom(y), dom(z).
+
+tREFLEXIVE_REWRITE(y,A), tREFLEXIVE_REWRITE(z,A) =>  false.
+
+true => tREFLEXIVE_REWRITE(x,y), tREFLEXIVE_REWRITE(x,z).
+
+tREWRITE(A,B) => tREFLEXIVE_REWRITE(A,B).
+
+tEQUALISH(A,B) => tREFLEXIVE_REWRITE(A,B).
+
+tEQUALISH(A,B), tREFLEXIVE_REWRITE(B,C) => tREFLEXIVE_REWRITE(A,C).
+
+tEQUALISH(A,B) => tEQUALISH(B,A).
+
+%% was: dom(A), true => tEQUALISH(A,A).
+dom(A) => tEQUALISH(A,A).
+
+tREFLEXIVE_REWRITE(A,B) => tEQUALISH(A,B); tREWRITE(A,B).
+
+tREWRITE(A,B), tREWRITE(A,C) =>  dom(D), tREWRITE(B,D), tREWRITE(C,D).
+

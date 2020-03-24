@@ -1,0 +1,79 @@
+:- dynamic l/0,r/0,rl/0,rr/0,np/1,nq/1,p/1,q/1.
+
+% problem: 
+% all XY. p(X) \/ q(Y)
+% implies
+% all X. p(X) \/ all Y. q(Y)
+
+name(apd).
+
+%dom(c).
+
+%assumptions
+_ axiom start: (true => l,r).
+
+_ axiom rlrr: (r => rl,rr).
+_ axiom rlnp: (rl => dom(X),np(X)).
+_ axiom rrnq: (rr => dom(Y),nq(Y)).
+
+_ axiom npnp(X): (p(X),np(X) => goal).
+_ axiom nqnq(X): (q(X),nq(X) => goal).
+
+%goal
+_ axiom xporq(X,Y): (dom(X),dom(Y),l => p(X);q(Y)).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/*
+
+Check apd.
+
+apd
+     : forall (dom : Set) (goal l : Prop) (np nq p q : dom -> Prop)
+         (r rl rr : Prop),
+       l /\ r ->
+       (r -> rl /\ rr) ->
+       (rl -> exists A : dom, np A) ->
+       (rr -> exists A : dom, nq A) ->
+       (forall A : dom, p A /\ np A -> goal) ->
+       (forall A : dom, q A /\ nq A -> goal) ->
+       (forall A B : dom, l -> p A \/ q B) -> goal
+
+Require Import Classical.
+
+Parameter dom:Set.
+Parameter p: dom -> Prop.
+Parameter q : dom -> Prop.
+
+Theorem x: (forall A B : dom, p A \/ q B) ->
+           (forall A : dom, p A ) \/ (forall B : dom, q B).
+
+Proof. 
+apply NNPP. unfold not. intros.
+Check apd.
+apply (apd dom False 
+(forall A B : dom, p A \/ q B)
+(fun x => ~ (p x)) 
+(fun x => ~ (q x)) 
+p 
+q 
+((exists X, ~ (p X)) /\ (exists X, ~ (q X)))
+(exists X, ~ (p X)) 
+(exists X, ~ (q X))) ;auto.
+split.
+apply NNPP. unfold not. auto. 
+intros.
+apply H.
+intro. 
+cut False.
+intro.
+elim H2.
+apply H0.
+exact H1.
+
+
+
+
+*/
+

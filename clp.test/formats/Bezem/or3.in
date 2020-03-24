@@ -1,0 +1,36 @@
+% or-example:     p ; q is Prolog syntax for p \/ q
+
+name(or3).
+
+:- dynamic p/0,q/0,r/0.
+
+_ axiom assump  : (true => p ; q ; r).
+
+_ axiom goal_p  : (p => goal).
+
+_ axiom goal_q  : (q => goal).
+
+_ axiom goal_r  : (r => goal).
+
+/*--------------------------output-----------------------
+
+stack pushed, stack: p \/ q \/ r :: nil
+ 
+stack top tailed: p
+ 
+valid, stack: q \/ r :: nil
+ 
+stack top tailed: q
+ 
+valid, stack: r :: nil
+ 
+stack popped: r
+ 
+valid, stack: nil
+
+-----------------------------or.v------------------------
+
+
+*/
+
+

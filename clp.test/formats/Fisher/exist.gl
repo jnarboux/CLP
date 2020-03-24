@@ -1,0 +1,2 @@
+true => dom(X),r(X).
+r(X) => goal.

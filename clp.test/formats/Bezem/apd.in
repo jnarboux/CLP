@@ -1,0 +1,27 @@
+:- dynamic l/0,r/0,rl/0,rr/0,np/1,nq/1,p/1,q/1.
+
+% problem: 
+% all XY. p(X) \/ q(Y)
+% implies
+% all X. p(X) \/ all Y. q(Y)
+
+name(apd).
+
+%dom(c).
+
+%assumptions
+_ axiom start: (true => l,r).
+
+_ axiom rlrr: (r => rl,rr).
+_ axiom rlnp: (rl => dom(X),np(X)).
+_ axiom rrnq: (rr => dom(Y),nq(Y)).
+
+_ axiom npnp(X): (p(X),np(X) => goal).
+_ axiom nqnq(X): (q(X),nq(X) => goal).
+
+%goal
+_ axiom xporq(X,Y): (dom(X),dom(Y),l => p(X);q(Y)).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

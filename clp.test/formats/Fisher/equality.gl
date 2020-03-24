@@ -1,0 +1,18 @@
+true => dom(b), dom(a), dom(c).
+
+true => p(a,a,a,a,a).
+
+p(b,b,b,b,b) => goal.
+
+true => eq(a,b).
+
+eq(X,Y),p(X,Z2,Z3,Z4,Z5) => p(Y,Z2,Z3,Z4,Z5).
+eq(X,Y),p(Z2,X,Z3,Z4,Z5) => p(Z2,Y,Z3,Z4,Z5).
+eq(X,Y),p(Z2,Z3,X,Z4,Z5) => p(Z2,Z3,Y,Z4,Z5).
+eq(X,Y),p(Z2,Z3,Z4,X,Z5) => p(Z2,Z3,Z4,Y,Z5).
+eq(X,Y),p(Z2,Z3,Z4,Z5,X) => p(Z2,Z3,Z4,Z5,Y).
+
+
+
+
+

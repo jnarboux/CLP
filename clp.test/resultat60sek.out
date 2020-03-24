@@ -1,0 +1,538 @@
+Geo  -  ok  -  wclock: 0.069s  -  anc.in
+Geo  -  ok  -  wclock: 0.005s  -  and3.in
+Geo  -  ok  -  wclock: 0.004s  -  and3or.in
+Geo  -  ok  -  wclock: 0.639s  -  anl.in
+Geo  -  ok  -  wclock: 0.022s  -  ap.in
+Geo  -  ok  -  wclock: 0.005s  -  apd.in
+Geo  -  ok  -  wclock: 0.011s  -  ape.in
+Geo  -  ok  -  wclock: 0.109s  -  cdp.in
+Geo  -  ok  -  wclock: 0.025s  -  ce.in
+Geo  -  ok  -  wclock: 0.013s  -  classic36.in
+Geo  -  ok  -  wclock: 0.006s  -  classic43.in
+Geo  -  no  -  wclock: 60.001s  -  cro_8_2.in
+Geo  -  no  -  wclock: 60.001s  -  cro_case1.in
+Geo  -  no  -  wclock: 60.001s  -  cro_case2.in
+Geo  -  ok  -  wclock: 0.065s  -  ct.in
+Geo  -  ok  -  wclock: 0.011s  -  d_andrew.in
+Geo  -  ok  -  wclock: 0.006s  -  d_horn.in
+Geo  -  ok  -  wclock: 0.010s  -  delta.in
+Geo  -  ok  -  wclock: 0.009s  -  delta1.in
+Geo  -  ok  -  wclock: 0.038s  -  dpa.in
+Geo  -  ok  -  wclock: 0.035s  -  dpe.in
+Geo  -  ok  -  wclock: 0.035s  -  dpe_a.in
+Geo  -  ok  -  wclock: 0.483s  -  dpt.in
+Geo  -  ok  -  wclock: 0.007s  -  drinker.in
+Geo  -  ok  -  wclock: 0.010s  -  drunk2.in
+Geo  -  ok  -  wclock: 0.029s  -  equality.in
+Geo  -  ok  -  wclock: 0.005s  -  exist.in
+Geo  -  ok  -  wclock: 0.283s  -  five.in
+Geo  -  ok  -  wclock: 0.009s  -  hdn001.in
+Geo  -  ok  -  wclock: 0.017s  -  hdn002.in
+Geo  -  no  -  wclock: 60.001s  -  hdn010.in
+Geo  -  ok  -  wclock: 0.089s  -  hdn020.in
+Geo  -  ok  -  wclock: 0.007s  -  hp.bf.0.in
+Geo  -  ok  -  wclock: 0.012s  -  hp.bf.1.in
+Geo  -  ok  -  wclock: 0.012s  -  hp.bf.2.in
+Geo  -  ok  -  wclock: 0.013s  -  hp.bf.3.in
+Geo  -  ok  -  wclock: 0.035s  -  hr.in
+Geo  -  no  -  wclock: 60.001s  -  latt.in
+Geo  -  ok  -  wclock: 0.677s  -  len
+Geo  -  ok  -  wclock: 0.069s  -  mb.in
+Geo  -  ok  -  wclock: 0.862s  -  nl.in
+Geo  -  ok  -  wclock: 0.343s  -  nnl.in
+Geo  -  ok  -  wclock: 0.005s  -  or.in
+Geo  -  ok  -  wclock: 0.005s  -  or3.in
+Geo  -  no  -  wclock: 60.001s  -  p1p2.in
+Geo  -  no  -  wclock: 60.001s  -  p2p1.in
+Geo  -  ok  -  wclock: 0.006s  -  pa.in
+Geo  -  ok  -  wclock: 0.010s  -  pa1.in
+Geo  -  ok  -  wclock: 0.010s  -  pa2.in
+Geo  -  ok  -  wclock: 0.006s  -  pierce.in
+Geo  -  no  -  wclock: 60.001s  -  pp.in
+Geo  -  ok  -  wclock: 0.006s  -  problem43.40.in
+Geo  -  ok  -  wclock: 0.007s  -  problem43.41.in
+Geo  -  ok  -  wclock: 0.009s  -  qedf.in
+Geo  -  ok  -  wclock: 3.631s  -  r.in
+Geo  -  ok  -  wclock: 43.254s  -  sd
+Geo  -  ok  -  wclock: 0.009s  -  ser.in
+Geo  -  ok  -  wclock: 0.013s  -  srr.in
+Geo  -  ok  -  wclock: 0.005s  -  steam.in
+Geo  -  ok  -  wclock: 0.097s  -  strip.in
+Geo  -  ok  -  wclock: 1.751s  -  tdpe.in
+Geo  -  ok  -  wclock: 1.738s  -  tdpe2.in
+Geo  -  ok  -  wclock: 3.278s  -  tdpe3.in
+Geo  -  ok  -  wclock: 1.002s  -  tdpe4.in
+Geo  -  ok  -  wclock: 0.005s  -  test.in
+Geo  -  ok  -  wclock: 1.292s  -  trs.in
+vampire  -  ok  -  wclock: 0.007s  -  anc.in
+vampire  -  ok  -  wclock: 0.008s  -  and3.in
+vampire  -  ok  -  wclock: 0.010s  -  and3or.in
+vampire  -  ok  -  wclock: 12.247s  -  anl.in
+vampire  -  ok  -  wclock: 0.011s  -  ap.in
+vampire  -  ok  -  wclock: 0.011s  -  apd.in
+vampire  -  ok  -  wclock: 0.011s  -  ape.in
+vampire  -  ok  -  wclock: 0.019s  -  cdp.in
+vampire  -  ok  -  wclock: 0.007s  -  ce.in
+vampire  -  ok  -  wclock: 0.009s  -  classic36.in
+vampire  -  ok  -  wclock: 0.016s  -  classic43.in
+vampire  -  ok  -  wclock: 12.870s  -  cro_8_2.in
+vampire  -  no  -  wclock: 60.001s  -  cro_case1.in
+vampire  -  no  -  wclock: 60.001s  -  cro_case2.in
+vampire  -  ok  -  wclock: 0.008s  -  ct.in
+vampire  -  ok  -  wclock: 0.005s  -  d_andrew.in
+vampire  -  ok  -  wclock: 0.005s  -  d_horn.in
+vampire  -  ok  -  wclock: 0.005s  -  delta.in
+vampire  -  ok  -  wclock: 0.005s  -  delta1.in
+vampire  -  ok  -  wclock: 0.013s  -  dpa.in
+vampire  -  ok  -  wclock: 0.015s  -  dpe.in
+vampire  -  ok  -  wclock: 0.014s  -  dpe_a.in
+vampire  -  ok  -  wclock: 0.073s  -  dpt.in
+vampire  -  ok  -  wclock: 0.009s  -  drinker.in
+vampire  -  ok  -  wclock: 0.012s  -  drunk2.in
+vampire  -  ok  -  wclock: 0.039s  -  equality.in
+vampire  -  ok  -  wclock: 0.008s  -  exist.in
+vampire  -  no  -  wclock: 60.001s  -  five.in
+vampire  -  ok  -  wclock: 0.005s  -  hdn001.in
+vampire  -  ok  -  wclock: 0.005s  -  hdn002.in
+vampire  -  no  -  wclock: 60.001s  -  hdn010.in
+vampire  -  ok  -  wclock: 0.010s  -  hdn020.in
+vampire  -  ok  -  wclock: 0.018s  -  hp.bf.0.in
+vampire  -  ok  -  wclock: 0.027s  -  hp.bf.1.in
+vampire  -  ok  -  wclock: 0.021s  -  hp.bf.2.in
+vampire  -  ok  -  wclock: 0.025s  -  hp.bf.3.in
+vampire  -  ok  -  wclock: 0.010s  -  hr.in
+vampire  -  no  -  wclock: 60.001s  -  latt.in
+vampire  -  no  -  wclock: 60.001s  -  len
+vampire  -  ok  -  wclock: 0.007s  -  mb.in
+vampire  -  ok  -  wclock: 12.238s  -  nl.in
+vampire  -  ok  -  wclock: 12.235s  -  nnl.in
+vampire  -  ok  -  wclock: 0.005s  -  or.in
+vampire  -  ok  -  wclock: 0.009s  -  or3.in
+vampire  -  no  -  wclock: 60.001s  -  p1p2.in
+vampire  -  no  -  wclock: 60.001s  -  p2p1.in
+vampire  -  no  -  wclock: 60.001s  -  pa.in
+vampire  -  ok  -  wclock: 0.005s  -  pa1.in
+vampire  -  no  -  wclock: 60.001s  -  pa2.in
+vampire  -  ok  -  wclock: 0.007s  -  pierce.in
+vampire  -  no  -  wclock: 60.001s  -  pp.in
+vampire  -  ok  -  wclock: 0.005s  -  problem43.40.in
+vampire  -  ok  -  wclock: 0.005s  -  problem43.41.in
+vampire  -  ok  -  wclock: 0.004s  -  qedf.in
+vampire  -  ok  -  wclock: 0.074s  -  r.in
+vampire  -  ok  -  wclock: 45.266s  -  sd
+vampire  -  ok  -  wclock: 0.011s  -  ser.in
+vampire  -  ok  -  wclock: 0.012s  -  srr.in
+vampire  -  ok  -  wclock: 0.019s  -  steam.in
+vampire  -  ok  -  wclock: 0.252s  -  strip.in
+vampire  -  ok  -  wclock: 24.966s  -  tdpe.in
+vampire  -  ok  -  wclock: 24.958s  -  tdpe2.in
+vampire  -  ok  -  wclock: 24.939s  -  tdpe3.in
+vampire  -  ok  -  wclock: 13.051s  -  tdpe4.in
+vampire  -  ok  -  wclock: 0.009s  -  test.in
+vampire  -  ok  -  wclock: 1.239s  -  trs.in
+eprover  -  ok  -  wclock: 0.014s  -  anc.in
+eprover  -  ok  -  wclock: 0.013s  -  and3.in
+eprover  -  ok  -  wclock: 0.013s  -  and3or.in
+eprover  -  ok  -  wclock: 0.519s  -  anl.in
+eprover  -  ok  -  wclock: 0.008s  -  ap.in
+eprover  -  ok  -  wclock: 0.010s  -  apd.in
+eprover  -  ok  -  wclock: 0.010s  -  ape.in
+eprover  -  ok  -  wclock: 0.015s  -  cdp.in
+eprover  -  ok  -  wclock: 0.012s  -  ce.in
+eprover  -  ok  -  wclock: 0.013s  -  classic36.in
+eprover  -  ok  -  wclock: 0.016s  -  classic43.in
+eprover  -  no  -  wclock: 60.021s  -  cro_8_2.in
+eprover  -  no  -  wclock: 60.009s  -  cro_case1.in
+eprover  -  no  -  wclock: 60.011s  -  cro_case2.in
+eprover  -  ok  -  wclock: 0.011s  -  ct.in
+eprover  -  ok  -  wclock: 0.011s  -  d_andrew.in
+eprover  -  ok  -  wclock: 0.010s  -  d_horn.in
+eprover  -  ok  -  wclock: 0.012s  -  delta.in
+eprover  -  ok  -  wclock: 0.013s  -  delta1.in
+eprover  -  ok  -  wclock: 0.015s  -  dpa.in
+eprover  -  ok  -  wclock: 0.016s  -  dpe.in
+eprover  -  ok  -  wclock: 0.015s  -  dpe_a.in
+eprover  -  ok  -  wclock: 0.366s  -  dpt.in
+eprover  -  ok  -  wclock: 0.007s  -  drinker.in
+eprover  -  ok  -  wclock: 0.008s  -  drunk2.in
+eprover  -  ok  -  wclock: 0.059s  -  equality.in
+eprover  -  ok  -  wclock: 0.006s  -  exist.in
+eprover  -  no  -  wclock: 60.057s  -  five.in
+eprover  -  ok  -  wclock: 0.020s  -  hdn001.in
+eprover  -  ok  -  wclock: 0.015s  -  hdn002.in
+eprover  -  no  -  wclock: 60.002s  -  hdn010.in
+eprover  -  ok  -  wclock: 0.013s  -  hdn020.in
+eprover  -  ok  -  wclock: 0.025s  -  hp.bf.0.in
+eprover  -  ok  -  wclock: 0.030s  -  hp.bf.1.in
+eprover  -  ok  -  wclock: 0.024s  -  hp.bf.2.in
+eprover  -  ok  -  wclock: 0.017s  -  hp.bf.3.in
+eprover  -  ok  -  wclock: 0.007s  -  hr.in
+eprover  -  no  -  wclock: 60.049s  -  latt.in
+eprover  -  no  -  wclock: 60.012s  -  len
+eprover  -  ok  -  wclock: 0.018s  -  mb.in
+eprover  -  ok  -  wclock: 0.221s  -  nl.in
+eprover  -  ok  -  wclock: 0.260s  -  nnl.in
+eprover  -  ok  -  wclock: 0.007s  -  or.in
+eprover  -  ok  -  wclock: 0.006s  -  or3.in
+eprover  -  no  -  wclock: 60.052s  -  p1p2.in
+eprover  -  no  -  wclock: 60.052s  -  p2p1.in
+eprover  -  no  -  wclock: 59.998s  -  pa.in
+eprover  -  ok  -  wclock: 0.008s  -  pa1.in
+eprover  -  no  -  wclock: 60.000s  -  pa2.in
+eprover  -  ok  -  wclock: 0.007s  -  pierce.in
+eprover  -  no  -  wclock: 60.055s  -  pp.in
+eprover  -  ok  -  wclock: 0.013s  -  problem43.40.in
+eprover  -  ok  -  wclock: 0.008s  -  problem43.41.in
+eprover  -  ok  -  wclock: 0.007s  -  qedf.in
+eprover  -  ok  -  wclock: 0.045s  -  r.in
+eprover  -  no  -  wclock: 60.026s  -  sd
+eprover  -  ok  -  wclock: 0.008s  -  ser.in
+eprover  -  ok  -  wclock: 0.010s  -  srr.in
+eprover  -  ok  -  wclock: 0.017s  -  steam.in
+eprover  -  ok  -  wclock: 0.011s  -  strip.in
+eprover  -  ok  -  wclock: 0.489s  -  tdpe.in
+eprover  -  ok  -  wclock: 0.460s  -  tdpe2.in
+eprover  -  ok  -  wclock: 0.854s  -  tdpe3.in
+eprover  -  ok  -  wclock: 0.414s  -  tdpe4.in
+eprover  -  ok  -  wclock: 0.007s  -  test.in
+eprover  -  ok  -  wclock: 0.074s  -  trs.in
+clp -G  -  ok  -  wclock: 0.010s  -  anc
+clp -G  -  ok  -  wclock: 0.003s  -  and3
+clp -G  -  ok  -  wclock: 0.004s  -  and3or
+clp -G  -  ok  -  wclock: 0.031s  -  anl
+clp -G  -  ok  -  wclock: 0.007s  -  ap
+clp -G  -  ok  -  wclock: 0.006s  -  apd
+clp -G  -  ok  -  wclock: 0.006s  -  ape
+clp -G  -  ok  -  wclock: 0.009s  -  cdp
+clp -G  -  ok  -  wclock: 0.006s  -  ce
+clp -G  -  ok  -  wclock: 0.005s  -  classic36
+clp -G  -  ok  -  wclock: 0.018s  -  classic43
+clp -G  -  ok  -  wclock: 0.839s  -  cro_8_2
+clp -G  -  no  -  wclock: 6.541s  -  cro_case1
+clp -G  -  no  -  wclock: 0.003s  -  cro_case2
+clp -G  -  ok  -  wclock: 0.008s  -  ct
+clp -G  -  ok  -  wclock: 0.008s  -  d_andrew
+clp -G  -  ok  -  wclock: 0.007s  -  d_horn
+clp -G  -  ok  -  wclock: 0.007s  -  delta
+clp -G  -  ok  -  wclock: 0.007s  -  delta1
+clp -G  -  ok  -  wclock: 0.008s  -  dpa
+clp -G  -  ok  -  wclock: 0.006s  -  dpe
+clp -G  -  ok  -  wclock: 0.007s  -  dpe_a
+clp -G  -  ok  -  wclock: 0.017s  -  dpt
+clp -G  -  ok  -  wclock: 0.004s  -  drinker
+clp -G  -  ok  -  wclock: 0.007s  -  drunk2
+clp -G  -  ok  -  wclock: 0.009s  -  equality
+clp -G  -  ok  -  wclock: 0.003s  -  exist
+clp -G  -  ok  -  wclock: 0.115s  -  five
+clp -G  -  ok  -  wclock: 0.006s  -  hdn001
+clp -G  -  ok  -  wclock: 0.007s  -  hdn002
+clp -G  -  no  -  wclock: 11.314s  -  hdn010
+clp -G  -  ok  -  wclock: 0.027s  -  hdn020
+clp -G  -  ok  -  wclock: 0.153s  -  hp.bf.0
+clp -G  -  ok  -  wclock: 0.097s  -  hp.bf.1
+clp -G  -  ok  -  wclock: 0.186s  -  hp.bf.2
+clp -G  -  ok  -  wclock: 0.104s  -  hp.bf.3
+clp -G  -  ok  -  wclock: 0.003s  -  hr
+clp -G  -  ok  -  wclock: 0.516s  -  latt
+clp -G  -  no  -  wclock: 2.394s  -  len
+clp -G  -  ok  -  wclock: 0.010s  -  mb
+clp -G  -  ok  -  wclock: 0.023s  -  nl
+clp -G  -  ok  -  wclock: 0.188s  -  nnl
+clp -G  -  ok  -  wclock: 0.006s  -  or
+clp -G  -  ok  -  wclock: 0.005s  -  or3
+clp -G  -  ok  -  wclock: 1.073s  -  p1p2
+clp -G  -  ok  -  wclock: 0.346s  -  p2p1
+clp -G  -  ok  -  wclock: 0.005s  -  pa
+clp -G  -  ok  -  wclock: 0.004s  -  pa1
+clp -G  -  no  -  wclock: 2.591s  -  pa2
+clp -G  -  ok  -  wclock: 0.005s  -  pierce
+clp -G  -  ok  -  wclock: 1.050s  -  pp
+clp -G  -  ok  -  wclock: 0.011s  -  problem43.40
+clp -G  -  ok  -  wclock: 0.008s  -  problem43.41
+clp -G  -  ok  -  wclock: 0.003s  -  qedf
+clp -G  -  ok  -  wclock: 0.096s  -  r
+clp -G  -  ok  -  wclock: 0.702s  -  sd
+clp -G  -  ok  -  wclock: 0.007s  -  ser
+clp -G  -  ok  -  wclock: 0.004s  -  srr
+clp -G  -  ok  -  wclock: 0.013s  -  steam
+clp -G  -  ok  -  wclock: 0.010s  -  strip
+clp -G  -  no  -  wclock: 4.445s  -  tdpe
+clp -G  -  no  -  wclock: 7.647s  -  tdpe2
+clp -G  -  no  -  wclock: 60.031s  -  tdpe3
+clp -G  -  no  -  wclock: 60.037s  -  tdpe4
+clp -G  -  ok  -  wclock: 0.002s  -  test
+clp -G  -  ok  -  wclock: 0.012s  -  trs
+clp  -  ok  -  wclock: 0.005s  -  anc
+clp  -  ok  -  wclock: 0.003s  -  and3
+clp  -  ok  -  wclock: 0.004s  -  and3or
+clp  -  ok  -  wclock: 0.030s  -  anl
+clp  -  ok  -  wclock: 0.026s  -  anl_eq
+clp  -  ok  -  wclock: 0.007s  -  ap
+clp  -  ok  -  wclock: 0.006s  -  apd
+clp  -  ok  -  wclock: 0.007s  -  ape
+clp  -  ok  -  wclock: 0.010s  -  cdp
+clp  -  ok  -  wclock: 0.007s  -  ce
+clp  -  ok  -  wclock: 0.006s  -  classic36
+clp  -  ok  -  wclock: 0.018s  -  classic43
+clp  -  ok  -  wclock: 0.948s  -  cro_8_2
+clp  -  no  -  wclock: 60.152s  -  cro_case1
+clp  -  no  -  wclock: 60.131s  -  cro_case2
+clp  -  ok  -  wclock: 0.031s  -  ct
+clp  -  ok  -  wclock: 0.018s  -  d_andrew
+clp  -  ok  -  wclock: 0.027s  -  d_horn
+clp  -  ok  -  wclock: 0.007s  -  delta
+clp  -  ok  -  wclock: 0.009s  -  delta1
+clp  -  ok  -  wclock: 0.009s  -  dpa
+clp  -  ok  -  wclock: 0.007s  -  dpe
+clp  -  ok  -  wclock: 0.007s  -  dpe_a
+clp  -  ok  -  wclock: 0.017s  -  dpt
+clp  -  ok  -  wclock: 0.004s  -  drinker
+clp  -  ok  -  wclock: 0.007s  -  drunk2
+clp  -  ok  -  wclock: 0.003s  -  eq
+clp  -  ok  -  wclock: 0.011s  -  equality
+clp  -  ok  -  wclock: 0.004s  -  exist
+clp  -  ok  -  wclock: 0.142s  -  five
+clp  -  ok  -  wclock: 0.012s  -  hdn001
+clp  -  ok  -  wclock: 0.008s  -  hdn002
+clp  -  no  -  wclock: 43.258s  -  hdn010
+clp  -  ok  -  wclock: 0.051s  -  hdn020
+clp  -  ok  -  wclock: 0.164s  -  hp.bf.0
+clp  -  ok  -  wclock: 0.103s  -  hp.bf.1
+clp  -  ok  -  wclock: 0.116s  -  hp.bf.2
+clp  -  ok  -  wclock: 0.118s  -  hp.bf.3
+clp  -  ok  -  wclock: 0.003s  -  hr
+clp  -  ok  -  wclock: 0.293s  -  latt
+clp  -  no  -  wclock: 13.505s  -  len
+clp  -  ok  -  wclock: 0.025s  -  mb
+clp  -  ok  -  wclock: 0.025s  -  nl
+clp  -  ok  -  wclock: 0.147s  -  nnl
+clp  -  ok  -  wclock: 0.009s  -  or
+clp  -  ok  -  wclock: 0.008s  -  or3
+clp  -  ok  -  wclock: 1.050s  -  p1p2
+clp  -  no  -  wclock: 0.337s  -  p1p2_eq
+clp  -  ok  -  wclock: 0.299s  -  p2p1
+clp  -  no  -  wclock: 9.857s  -  p2p1_eq
+clp  -  ok  -  wclock: 0.031s  -  pa
+clp  -  ok  -  wclock: 0.017s  -  pa1
+clp  -  no  -  wclock: 14.193s  -  pa2
+clp  -  ok  -  wclock: 0.083s  -  pierce
+clp  -  ok  -  wclock: 0.983s  -  pp
+clp  -  ok  -  wclock: 0.009s  -  problem43.40
+clp  -  ok  -  wclock: 0.020s  -  problem43.41
+clp  -  ok  -  wclock: 0.011s  -  qedf
+clp  -  ok  -  wclock: 0.101s  -  r
+clp  -  ok  -  wclock: 0.674s  -  sd
+clp  -  ok  -  wclock: 0.011s  -  ser
+clp  -  ok  -  wclock: 0.006s  -  srr
+clp  -  ok  -  wclock: 0.015s  -  steam
+clp  -  ok  -  wclock: 0.010s  -  strip
+clp  -  no  -  wclock: 28.098s  -  tdpe
+clp  -  no  -  wclock: 60.129s  -  tdpe2
+clp  -  no  -  wclock: 60.035s  -  tdpe3
+clp  -  no  -  wclock: 60.041s  -  tdpe4
+clp  -  ok  -  wclock: 0.008s  -  test
+clp  -  ok  -  wclock: 0.016s  -  trs
+CL.pl      -  ok  -  wclock: 0.055s  -  anc
+CL.pl      -  ok  -  wclock: 0.015s  -  and3
+CL.pl      -  ok  -  wclock: 0.019s  -  and3or
+CL.pl      -  no  -  wclock: 60.002s  -  anl
+CL.pl      -  no  -  wclock: 60.001s  -  anl_eq
+CL.pl      -  ok  -  wclock: 0.024s  -  ap
+CL.pl      -  ok  -  wclock: 0.019s  -  apd
+CL.pl      -  ok  -  wclock: 0.011s  -  ape
+CL.pl      -  no  -  wclock: 60.001s  -  cdp
+CL.pl      -  ok  -  wclock: 0.010s  -  ce
+CL.pl      -  ok  -  wclock: 0.022s  -  classic36
+CL.pl      -  ok  -  wclock: 0.028s  -  classic43
+CL.pl      -  ok  -  wclock: 0.251s  -  cro_8_2
+CL.pl      -  no  -  wclock: 60.002s  -  cro_case1
+CL.pl      -  no  -  wclock: 60.002s  -  cro_case2
+CL.pl      -  no  -  wclock: 60.002s  -  ct
+CL.pl      -  ok  -  wclock: 0.020s  -  d_andrew
+CL.pl      -  ok  -  wclock: 0.020s  -  d_horn
+CL.pl      -  ok  -  wclock: 0.018s  -  delta
+CL.pl      -  ok  -  wclock: 0.015s  -  delta1
+CL.pl      -  ok  -  wclock: 0.022s  -  dpa
+CL.pl      -  ok  -  wclock: 0.020s  -  dpe
+CL.pl      -  ok  -  wclock: 0.018s  -  dpe_a
+CL.pl      -  no  -  wclock: 60.001s  -  dpt
+CL.pl      -  ok  -  wclock: 0.022s  -  drinker
+CL.pl      -  ok  -  wclock: 0.017s  -  drunk2
+CL.pl      -  no  -  wclock: 60.001s  -  eq
+CL.pl      -  ok  -  wclock: 0.027s  -  equality
+CL.pl      -  ok  -  wclock: 0.021s  -  exist
+CL.pl      -  ok  -  wclock: 0.105s  -  five
+CL.pl      -  ok  -  wclock: 0.022s  -  hdn001
+CL.pl      -  ok  -  wclock: 0.018s  -  hdn002
+CL.pl      -  no  -  wclock: 60.001s  -  hdn010
+CL.pl      -  ok  -  wclock: 0.032s  -  hdn020
+CL.pl      -  no  -  wclock: 60.030s  -  hp.bf.0
+CL.pl      -  no  -  wclock: 60.031s  -  hp.bf.1
+CL.pl      -  no  -  wclock: 60.031s  -  hp.bf.2
+CL.pl      -  no  -  wclock: 60.031s  -  hp.bf.3
+CL.pl      -  ok  -  wclock: 0.021s  -  hr
+CL.pl      -  ok  -  wclock: 0.170s  -  latt
+CL.pl      -  no  -  wclock: 60.005s  -  len
+CL.pl      -  ok  -  wclock: 0.048s  -  mb
+CL.pl      -  ok  -  wclock: 0.017s  -  nl
+CL.pl      -  ok  -  wclock: 0.227s  -  nnl
+CL.pl      -  ok  -  wclock: 0.019s  -  or
+CL.pl      -  ok  -  wclock: 0.015s  -  or3
+CL.pl      -  ok  -  wclock: 0.916s  -  p1p2
+CL.pl      -  no  -  wclock: 60.003s  -  p1p2_eq
+CL.pl      -  ok  -  wclock: 0.102s  -  p2p1
+CL.pl      -  no  -  wclock: 60.003s  -  p2p1_eq
+CL.pl      -  no  -  wclock: 60.003s  -  pa
+CL.pl      -  ok  -  wclock: 0.027s  -  pa1
+CL.pl      -  no  -  wclock: 60.004s  -  pa2
+CL.pl      -  ok  -  wclock: 0.019s  -  pierce
+CL.pl      -  ok  -  wclock: 40.035s  -  pp
+CL.pl      -  ok  -  wclock: 0.083s  -  problem43.40
+CL.pl      -  ok  -  wclock: 0.266s  -  problem43.41
+CL.pl      -  no  -  wclock: 60.017s  -  qedf
+CL.pl      -  ok  -  wclock: 0.190s  -  r
+CL.pl      -  no  -  wclock: 60.003s  -  sd
+CL.pl      -  ok  -  wclock: 0.028s  -  ser
+CL.pl      -  ok  -  wclock: 0.018s  -  srr
+CL.pl      -  ok  -  wclock: 0.019s  -  steam
+CL.pl      -  no  -  wclock: 60.003s  -  strip
+CL.pl      -  no  -  wclock: 60.004s  -  tdpe
+CL.pl      -  no  -  wclock: 60.004s  -  tdpe2
+CL.pl      -  ok  -  wclock: 38.007s  -  tdpe3
+CL.pl      -  ok  -  wclock: 0.036s  -  tdpe4
+CL.pl      -  ok  -  wclock: 0.016s  -  test
+CL.pl      -  ok  -  wclock: 0.023s  -  trs
+leancop  -  ok  -  wclock: 1.075s  -  anc.in
+leancop  -  ok  -  wclock: 1.034s  -  and3.in
+leancop  -  ok  -  wclock: 1.033s  -  and3or.in
+leancop  -  no  -  wclock: 60.511s  -  anl.in
+leancop  -  ok  -  wclock: 3.052s  -  ap.in
+leancop  -  ok  -  wclock: 1.029s  -  apd.in
+leancop  -  ok  -  wclock: 1.030s  -  ape.in
+leancop  -  no  -  wclock: 60.508s  -  cdp.in
+leancop  -  ok  -  wclock: 1.033s  -  ce.in
+leancop  -  ok  -  wclock: 1.033s  -  classic36.in
+leancop  -  ok  -  wclock: 1.033s  -  classic43.in
+leancop  -  no  -  wclock: 60.508s  -  cro_8_2.in
+leancop  -  no  -  wclock: 60.508s  -  cro_case1.in
+leancop  -  no  -  wclock: 60.508s  -  cro_case2.in
+leancop  -  ok  -  wclock: 55.667s  -  ct.in
+leancop  -  ok  -  wclock: 1.029s  -  d_andrew.in
+leancop  -  ok  -  wclock: 1.029s  -  d_horn.in
+leancop  -  ok  -  wclock: 1.031s  -  delta.in
+leancop  -  ok  -  wclock: 1.033s  -  delta1.in
+leancop  -  no  -  wclock: 60.508s  -  dpa.in
+leancop  -  no  -  wclock: 60.508s  -  dpe.in
+leancop  -  no  -  wclock: 60.508s  -  dpe_a.in
+leancop  -  no  -  wclock: 60.508s  -  dpt.in
+leancop  -  ok  -  wclock: 1.031s  -  drinker.in
+leancop  -  ok  -  wclock: 1.029s  -  drunk2.in
+leancop  -  ok  -  wclock: 1.029s  -  equality.in
+leancop  -  ok  -  wclock: 1.030s  -  exist.in
+leancop  -  no  -  wclock: 60.508s  -  five.in
+leancop  -  ok  -  wclock: 1.032s  -  hdn001.in
+leancop  -  ok  -  wclock: 1.035s  -  hdn002.in
+leancop  -  no  -  wclock: 60.508s  -  hdn010.in
+leancop  -  ok  -  wclock: 1.035s  -  hdn020.in
+leancop  -  no  -  wclock: 60.508s  -  hp.bf.0.in
+leancop  -  no  -  wclock: 60.508s  -  hp.bf.1.in
+leancop  -  no  -  wclock: 60.508s  -  hp.bf.2.in
+leancop  -  no  -  wclock: 60.508s  -  hp.bf.3.in
+leancop  -  ok  -  wclock: 1.034s  -  hr.in
+leancop  -  no  -  wclock: 60.508s  -  latt.in
+leancop  -  no  -  wclock: 60.508s  -  len
+leancop  -  ok  -  wclock: 1.034s  -  mb.in
+leancop  -  no  -  wclock: 60.508s  -  nl.in
+leancop  -  no  -  wclock: 60.508s  -  nnl.in
+leancop  -  ok  -  wclock: 1.026s  -  or.in
+leancop  -  ok  -  wclock: 1.029s  -  or3.in
+leancop  -  no  -  wclock: 60.508s  -  p1p2.in
+leancop  -  no  -  wclock: 60.508s  -  p2p1.in
+leancop  -  no  -  wclock: 1.031s  -  pa.in
+leancop  -  ok  -  wclock: 1.031s  -  pa1.in
+leancop  -  no  -  wclock: 60.508s  -  pa2.in
+leancop  -  ok  -  wclock: 1.034s  -  pierce.in
+leancop  -  no  -  wclock: 60.508s  -  pp.in
+leancop  -  ok  -  wclock: 1.030s  -  problem43.40.in
+leancop  -  ok  -  wclock: 1.035s  -  problem43.41.in
+leancop  -  ok  -  wclock: 1.035s  -  qedf.in
+leancop  -  no  -  wclock: 60.508s  -  r.in
+leancop  -  no  -  wclock: 60.508s  -  sd
+leancop  -  ok  -  wclock: 9.128s  -  ser.in
+leancop  -  ok  -  wclock: 1.032s  -  srr.in
+leancop  -  ok  -  wclock: 1.034s  -  steam.in
+leancop  -  no  -  wclock: 60.508s  -  strip.in
+leancop  -  no  -  wclock: 60.508s  -  tdpe.in
+leancop  -  no  -  wclock: 60.508s  -  tdpe2.in
+leancop  -  no  -  wclock: 60.508s  -  tdpe3.in
+leancop  -  no  -  wclock: 60.508s  -  tdpe4.in
+leancop  -  ok  -  wclock: 1.028s  -  test.in
+leancop  -  no  -  wclock: 60.508s  -  trs.in
+colog 1.9  -  ok  -  wclock: 0.115s  -  anc
+colog 1.9  -  ok  -  wclock: 0.112s  -  and3
+colog 1.9  -  ok  -  wclock: 0.108s  -  and3or
+colog 1.9  -  ok  -  wclock: 0.141s  -  anl
+colog 1.9  -  ok  -  wclock: 0.113s  -  ap
+colog 1.9  -  ok  -  wclock: 0.109s  -  apd
+colog 1.9  -  ok  -  wclock: 0.110s  -  ape
+colog 1.9  -  ok  -  wclock: 0.108s  -  cdp
+colog 1.9  -  ok  -  wclock: 0.104s  -  ce
+colog 1.9  -  ok  -  wclock: 0.110s  -  classic36
+colog 1.9  -  ok  -  wclock: 0.106s  -  classic43
+colog 1.9  -  ok  -  wclock: 0.337s  -  cro_8_2
+colog 1.9  -  no  -  wclock: 60.001s  -  cro_case1
+colog 1.9  -  no  -  wclock: 0.106s  -  cro_case2
+colog 1.9  -  ok  -  wclock: 0.115s  -  ct
+colog 1.9  -  ok  -  wclock: 0.116s  -  d_andrew
+colog 1.9  -  ok  -  wclock: 0.119s  -  d_horn
+colog 1.9  -  ok  -  wclock: 0.112s  -  delta
+colog 1.9  -  ok  -  wclock: 0.105s  -  delta1
+colog 1.9  -  ok  -  wclock: 0.116s  -  dpa
+colog 1.9  -  ok  -  wclock: 0.113s  -  dpe
+colog 1.9  -  ok  -  wclock: 0.114s  -  dpe_a
+colog 1.9  -  ok  -  wclock: 0.136s  -  dpt
+colog 1.9  -  ok  -  wclock: 0.111s  -  drinker
+colog 1.9  -  ok  -  wclock: 0.115s  -  drunk2
+colog 1.9  -  ok  -  wclock: 0.127s  -  equality
+colog 1.9  -  ok  -  wclock: 0.105s  -  exist
+colog 1.9  -  ok  -  wclock: 0.231s  -  five
+colog 1.9  -  ok  -  wclock: 0.118s  -  hdn001
+colog 1.9  -  ok  -  wclock: 0.115s  -  hdn002
+colog 1.9  -  no  -  wclock: 60.001s  -  hdn010
+colog 1.9  -  ok  -  wclock: 0.192s  -  hdn020
+colog 1.9  -  ok  -  wclock: 3.668s  -  hp.bf.0
+colog 1.9  -  ok  -  wclock: 3.705s  -  hp.bf.1
+colog 1.9  -  ok  -  wclock: 3.926s  -  hp.bf.2
+colog 1.9  -  ok  -  wclock: 3.831s  -  hp.bf.3
+colog 1.9  -  ok  -  wclock: 0.097s  -  hr
+colog 1.9  -  ok  -  wclock: 0.956s  -  latt
+colog 1.9  -  ok  -  wclock: 0.129s  -  len
+colog 1.9  -  ok  -  wclock: 0.112s  -  mb
+colog 1.9  -  ok  -  wclock: 0.133s  -  nl
+colog 1.9  -  ok  -  wclock: 0.172s  -  nnl
+colog 1.9  -  ok  -  wclock: 0.109s  -  or
+colog 1.9  -  ok  -  wclock: 0.105s  -  or3
+colog 1.9  -  ok  -  wclock: 0.881s  -  p1p2
+colog 1.9  -  ok  -  wclock: 0.310s  -  p2p1
+colog 1.9  -  ok  -  wclock: 0.110s  -  pa
+colog 1.9  -  ok  -  wclock: 0.110s  -  pa1
+colog 1.9  -  no  -  wclock: 60.001s  -  pa2
+colog 1.9  -  ok  -  wclock: 0.095s  -  pierce
+colog 1.9  -  ok  -  wclock: 1.920s  -  pp
+colog 1.9  -  ok  -  wclock: 0.137s  -  problem43.40
+colog 1.9  -  ok  -  wclock: 0.164s  -  problem43.41
+colog 1.9  -  ok  -  wclock: 0.112s  -  qedf
+colog 1.9  -  ok  -  wclock: 0.193s  -  r
+colog 1.9  -  no  -  wclock: 60.001s  -  sd
+colog 1.9  -  ok  -  wclock: 0.102s  -  ser
+colog 1.9  -  ok  -  wclock: 0.112s  -  srr
+colog 1.9  -  ok  -  wclock: 0.131s  -  steam
+colog 1.9  -  ok  -  wclock: 0.131s  -  strip
+colog 1.9  -  no  -  wclock: 60.001s  -  tdpe
+colog 1.9  -  no  -  wclock: 60.001s  -  tdpe2
+colog 1.9  -  no  -  wclock: 60.001s  -  tdpe3
+colog 1.9  -  no  -  wclock: 60.001s  -  tdpe4
+colog 1.9  -  ok  -  wclock: 0.106s  -  test
+colog 1.9  -  ok  -  wclock: 0.110s  -  trs
+
+

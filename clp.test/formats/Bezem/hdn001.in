@@ -1,0 +1,15 @@
+name(hdn).
+
+:- dynamic p/4.
+
+dom(0). dom(1). 
+
+_ axiom start: (true => p(0,0,0,0)).
+
+_ axiom q_e_d :(p(1,1,1,1) => goal).
+_ axiom p4(X,Y,Z) :(p(X,Y,Z,0) => p(X,Y,Z,1)).
+_ axiom p3(X,Y) :(p(X,Y,0,1) => p(X,Y,1,0)).
+_ axiom p2(X) :(p(X,0,1,1) => p(X,1,0,0)).
+_ axiom p1 :(p(0,1,1,1) => p(1,0,0,0)).
+
+%%%

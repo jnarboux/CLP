@@ -1,0 +1,34 @@
+true => dom(w), dom(f), dom(b), dom(s), dom(c), dom(g).
+
+
+animal(X),animal(Y),eats(X,Y),grain(Z),eats(Y,Z) => goal.
+
+true => wolf(w).
+true => fox(f).
+true => bird(b).
+true => snail(s).
+true => caterpillar(c).
+true => grain(g).
+
+wolf(X) => animal(X).
+fox(X) => animal(X).
+bird(X) => animal(X).
+snail(X) => animal(X).
+caterpillar(X) => animal(X).
+grain(X) => plant(X).
+
+caterpillar(X),bird(Y) => smaller(X,Y).
+snail(X),bird(Y) => smaller(X,Y).
+bird(X),fox(Y) => smaller(X,Y).
+fox(X),wolf(Y) => smaller(X,Y).
+
+wolf(X),fox(Y),eats(X,Y) => false.
+wolf(X),grain(Y),eats(X,Y) => false.
+bird(X),snail(Y),eats(X,Y) => false.
+bird(X),caterpillar(Y) => eats(X,Y).
+
+snail(X) => dom(Y),plant(Y),eats(X,Y).       
+caterpillar(X) => dom(Y),plant(Y),eats(X,Y).
+ 
+animal(X),animal(Y),smaller(Y,X),plant(U),plant(V),eats(Y,V) => eats(X,U) ; eats(X,Y).
+

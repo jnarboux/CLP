@@ -1,0 +1,17 @@
+true => dom(a)  ,  dom(b)  ,  dom(c)  ,  dom(m)  ,  dom(n)  ,  dom(n1)  ,  s(n,n1),lt(m,n1),rn(m,a,b),rn(n1,a,c). 
+mInus(n1,m,N),rn(N,b,D) => goal.
+lt(N1,M1),s(N,N1),s(M,M1) => lt(N,M).
+mInus(N,M,L),s(M,M1),s(N,N1) => mInus(N1,M1,L).
+l_e(X,Y),l_e(Y,Z) => l_e(X,Z).
+l_e(M,M) => lt(M,n);l_e(n,M).
+e(X,Y),rn(N,Y,Z) => rn(N,X,Z).
+rn(N,X,Y) => e(Y,X),mInus(n1,N,n1);dom(M),aux(M,N,X,Y).
+aux(M,N,X,Y) => dom(Z),l_e(M,M),s(M,N),r(X,Z),rn(M,Z,Y).
+s(M,N),rn(N,X,Y) => dom(U),r(X,U),rn(M,U,Y).
+rn(M,X,Y),l_e(n,M) => dom(U),rn(n,X,U).
+rn(M,X,Y),rn(N,Y,Z),l_e(L,M),mInus(n,L,N) => dom(U),rn(n,X,U).
+lt(M,n),rn(M,X,Y),rn(n,X,Z) => dom(N),aux0(N,M,Y).
+aux0(N,M,Y) => dom(U),mInus(n,M,N),rn(N,Y,U).
+r(X,Y),r(X,Z) => dom(N),aux1(N,Y,Z).
+aux1(N,Y,Z) => dom(M),aux2(M,N,Y,Z).
+aux2(M,N,Y,Z) => dom(U),l_e(M,M),l_e(M,N),rn(N,Y,U),rn(M,Z,U).

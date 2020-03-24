@@ -1,0 +1,57 @@
+% Pappus2 => Pappus1 in projective planes with equality built-in
+
+name(p2p1).
+
+:- dynamic pl/2,col/4.
+%pl = point-line incidence (deliberately asymmetric!)
+%col = point-point-point-line collinearity
+
+%points 
+dom(a). dom(b). dom(c). dom(d). dom(e). dom(f). dom(g). dom(h). dom(i).
+point(a). point(b). point(c). point(d). point(e). point(f). point(g). point(h). point(i).
+%lines 
+dom(l). dom(m). dom(n). dom(o). dom(p). dom(q). dom(r). dom(s).
+is_line(l). is_line(m). is_line(n). is_line(o). is_line(p). is_line(q). is_line(r). is_line(s).
+
+%Pappus1 assumptions, same as in Pappus2
+_ axiom assump1 : (true => col(a,b,c,l),col(d,e,f,m)). %a,b,c on l, etc.
+_ axiom assump2 : (true => col(b,f,g,n),col(c,e,g,o)).
+_ axiom assump3 : (true => col(b,d,h,p),col(a,e,h,q)).
+_ axiom assump4 : (true => col(c,d,i,r),col(a,f,i,s)).
+
+%Pappus1 conclusions
+_ axiom goalam   : (pl(a,m) => goal).
+_ axiom goalbm   : (pl(b,m) => goal).
+_ axiom goalcm   : (pl(c,m) => goal).
+_ axiom goaldl   : (pl(d,l) => goal).
+_ axiom goalel   : (pl(e,l) => goal).
+_ axiom goalfl   : (pl(f,l) => goal).
+_ axiom goal4(U) : (pl(g,U),pl(h,U),pl(i,U) => goal).
+%not using col(g,h,i,U) for efficiency reasons ...
+
+%collinearity, we avoid the symmetries inflicted by col_intro 
+_ axiom col_elim1(P,Q,R,L) : (col(P,Q,R,L) => pl(P,L)).
+_ axiom col_elim2(P,Q,R,L) : (col(P,Q,R,L) => pl(Q,L)).
+_ axiom col_elim3(P,Q,R,L) : (col(P,Q,R,L) => pl(R,L)).
+% axiom col_intro(P,Q,R,L) : (pl(P,L),pl(Q,L),pl(R,L) => col(P,Q,R,L)).
+
+%Pappus2: A,B,C on L, D,E,F on M, N/=O, P/=Q, R/=S, then ...
+_ axiom papp1(A,B,C,L,D,E,F,M,G,N,O,H,P,Q,I,R,S) : (
+col(A,B,C,L),col(D,E,F,M),                         % ABC on L, DEF on M
+col(B,F,G,N),col(C,E,G,O),                            %cross BF,CE in G 
+col(B,D,H,P),col(A,E,H,Q),                            %cross BD,AE in H
+col(C,D,I,R),col(A,F,I,S)                             %cross CD,AF in I
+=> dom(T),col(G,H,I,T);                               % G,H,I on line T 
+   =(N,O);=(P,Q);=(R,S)).  % exceptions
+
+ 
+%projective uniqueness
+_ axiom unique(P,L,M,Q):(pl(P,L),pl(P,M),pl(Q,L),pl(Q,M) => =(P,Q); =(L,M)).
+
+%last to avoid infinite paths: projective incidence axioms
+_ axiom line(P,Q) : (point(P),point(Q),=(P,P),=(Q,Q) => dom(L),line(L),pl(P,L),pl(Q,L)).
+
+%not used in this proof
+_ axiom point(L,M) : (line(L),line(M),=(L,L),=(M,M) => dom(P),point(P),pl(P,L),pl(P,M)).
+
+

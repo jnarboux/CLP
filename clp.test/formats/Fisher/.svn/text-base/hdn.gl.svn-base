@@ -1,0 +1,11 @@
+
+true => dom(a). 
+
+p(X,Y),p(Y,X) => goal.
+e(X,Y),p(Z,Y) => p(Z,X).
+p(X,Y),p(Y,Z) => e(X,Z).
+dom(X) => dom(f(X)),p(X,f(X)).
+
+dom(X) => dom(Y),p(X,Y).
+
+

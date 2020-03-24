@@ -1,0 +1,26 @@
+% p(n) iff not p(k) for all k>n  leads to a contradiction
+% it suffices that the domain is non-empty and < is transitive and serial
+
+name(ser).
+
+:- dynamic p/1,notp/1,lesS/2.
+
+% domain element o
+
+dom(o).
+
+% the systematic translation based on the tableaux method yields:
+
+_ axiom left_to_right(X,Y): (p(X),lesS(X,Y),p(Y) => false).
+
+_ axiom right_to_left(X): (dom(X) => p(X) ; dom(Y),lesS(X,Y),p(Y)). 
+
+% basic facts on lesS
+
+_ axiom transitive_lesS(X,Y,Z) :(lesS(X,Y),lesS(Y,Z) => lesS(X,Z)).
+
+_ axiom serial_lesS(X) :(dom(X) => dom(Y),lesS(X,Y)). % last!
+
+% NB inconsistency is proved without a clause for goal!
+
+

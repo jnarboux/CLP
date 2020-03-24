@@ -1,0 +1,34 @@
+% Peano Arithmetic
+
+name(pa1).
+
+:- dynamic nat/1,s/2,my_plus/3,notplus/3.
+
+% domain elements 0,x
+dom(0).
+dom(x).
+
+% missing assumption, goal under construction
+
+_ axiom null          :(true => nat(0),nat(x)).
+_ axiom notplus(X,Y,Z):(my_plus(X,Y,Z),notplus(X,Y,Z) => false).
+_ axiom plusnull(X)   :(nat(X) => my_plus(X,0,X)).
+_ axiom nullplus(X)   :(nat(X) => my_plus(0,X,X)).
+_ axiom plussucc(X,Y,Z,Y1,Z1): (my_plus(X,Y,Z),s(Y,Y1),s(Z,Z1) => my_plus(X,Y1,Z1)).
+
+1 axiom induction_instance(X):(nat(X),my_plus(0,0,0) => my_plus(0,X,X) ;
+                              dom(X),dom(Y),my_plus(0,X,X),s(X,Y),notplus(0,Y,Y)).
+2 axiom succ(X)   :(nat(X) => dom(Y),nat(Y),s(X,Y)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+enabled(X,X).
+enabled(N,[]):-number(N).
+
+next(_,[],1).
+next(_,1,2).
+next(_,2,3).
+next(_,3,4).
+next(_,4,5).
+next(_,5,1).
+
+

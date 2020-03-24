@@ -1,0 +1,8 @@
+name(qedf).
+p(a).
+s(X,Y) => goal.
+r(X,Y) => p(Y).
+p(X) => u(X);v(X).
+u(X) => s(X,A).
+v(X) => r(X,B).
+p(X) => s(X,Z).

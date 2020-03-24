@@ -1,0 +1,59 @@
+name(hdn).
+
+:- dynamic bin_count/27.
+
+dom(0). dom(1). 
+
+_ axiom start: (true => bin_count(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+
+%_ axiom qed3(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,1,1,1) => goal).
+%_ axiom qed5(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,1,1,1,1,1) => goal).
+%_ axiom qed10(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed11(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,1,1,1,1,1,1,1,1,1,1,1) => goal).
+_ axiom qed12(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed13(A,B,C,D,E,F,G,H,I,J,K,L,M,N) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed14(A,B,C,D,E,F,G,H,I,J,K,L,M) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed15(A,B,C,D,E,F,G,H,I,J,K,L) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed16(A,B,C,D,E,F,G,H,I,J,K) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed17(A,B,C,D,E,F,G,H,I,J) :(bin_count(A,B,C,D,E,F,G,H,I,J,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed18(A,B,C,D,E,F,G,H,I) :(bin_count(A,B,C,D,E,F,G,H,I,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed19(A,B,C,D,E,F,G,H) :(bin_count(A,B,C,D,E,F,G,H,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed20(A,B,C,D,E,F,G) :(bin_count(A,B,C,D,E,F,G,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed21(A,B,C,D,E,F) :(bin_count(A,B,C,D,E,F,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed22(A,B,C,D,E) :(bin_count(A,B,C,D,E,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed23(A,B,C,D) :(bin_count(A,B,C,D,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed24(A,B,C) :(bin_count(A,B,C,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed25(A,B) :(bin_count(A,B,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed26(A) :(bin_count(A,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+%_ axiom qed27 :(bin_count(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => goal).
+
+_ axiom p27(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,1)).
+_ axiom p26(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,0,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,1,0)).
+_ axiom p25(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,0,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,1,0,0)).
+_ axiom p24(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,0,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,1,0,0,0)).
+_ axiom p23(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,0,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,1,0,0,0,0)).
+_ axiom p22(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,0,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,1,0,0,0,0,0)).
+_ axiom p21(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,0,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,1,0,0,0,0,0,0)).
+_ axiom p20(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,0,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,1,0,0,0,0,0,0,0)).
+_ axiom p19(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,0,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,1,0,0,0,0,0,0,0,0)).
+_ axiom p18(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,0,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,1,0,0,0,0,0,0,0,0,0)).
+_ axiom p17(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,0,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,1,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p16(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,0,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,1,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p15(A,B,C,D,E,F,G,H,I,J,K,L,M,N) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,0,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,N,1,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p14(A,B,C,D,E,F,G,H,I,J,K,L,M) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,0,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,M,1,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p13(A,B,C,D,E,F,G,H,I,J,K,L) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,L,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,L,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p12(A,B,C,D,E,F,G,H,I,J,K) :(bin_count(A,B,C,D,E,F,G,H,I,J,K,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,K,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p11(A,B,C,D,E,F,G,H,I,J) :(bin_count(A,B,C,D,E,F,G,H,I,J,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,J,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p10(A,B,C,D,E,F,G,H,I) :(bin_count(A,B,C,D,E,F,G,H,I,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,I,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p9(A,B,C,D,E,F,G,H) :(bin_count(A,B,C,D,E,F,G,H,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,H,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p8(A,B,C,D,E,F,G) :(bin_count(A,B,C,D,E,F,G,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,G,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p7(A,B,C,D,E,F) :(bin_count(A,B,C,D,E,F,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,F,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p6(A,B,C,D,E) :(bin_count(A,B,C,D,E,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,E,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p5(A,B,C,D) :(bin_count(A,B,C,D,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,D,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p4(A,B,C) :(bin_count(A,B,C,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,C,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p3(A,B) :(bin_count(A,B,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,B,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p2(A) :(bin_count(A,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(A,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+_ axiom p1  :(bin_count(0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1) => bin_count(1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)).
+
+
+%%%

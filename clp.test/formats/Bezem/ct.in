@@ -1,0 +1,33 @@
+% CDP(r,s) => CDP(rt,s)
+name(ct).
+
+:- dynamic r/2,s/2,rt/2.
+
+% domain elements a,b,c
+dom(a). dom(b). dom(c).
+
+_ axiom assump : (true => rt(a,b),s(a,c)).
+_ axiom goal_ax(X): (dom(X),s(b,X),rt(c,X) => goal).
+
+% basic facts on rt
+_ axiom r_in_rt(X,Y) :(r(X,Y) => rt(X,Y)).
+_ axiom trans_rt(X,Y,Z) :(rt(X,Y),rt(Y,Z) => rt(X,Z)).
+4 axiom r_or_rr(X,Y) :(rt(X,Y) => r(X,Y);dom(U),rt(X,U),rt(U,Y)).
+
+% induction hypotheses
+2 axiom ih_1(X,Y) :(rt(a,X),rt(X,b),s(a,Y) => dom(U),s(X,U),rt(Y,U)).
+1 axiom ih_2(X,Y) :(rt(a,X),rt(X,b),s(X,Y) => dom(U),s(b,U),rt(Y,U)).
+
+% CDP, commutative DP or one-step commutation
+3 axiom c_r_s(X,Y,Z) :(r(X,Y),s(X,Z) => dom(U),s(Y,U),r(Z,U)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+enabled(X,X).
+enabled(N,[]):-number(N).
+
+next(_,[],1).
+next(_,1,2).
+next(_,2,3).
+next(_,3,4).
+next(_,4,5).
+next(_,5,1).

@@ -1,0 +1,122 @@
+name(cro_case1).
+
+:- dynamic p/1,l/1,e/2,i/2.
+
+% domain elements
+
+% points
+dom(a1).
+dom(a2).
+dom(a3).
+dom(b1).
+dom(b2).
+dom(b3).
+dom(s).
+dom(p1).
+dom(p2).
+dom(p3).
+
+% lines
+dom(a1a2).
+dom(a2a3).
+dom(a3a1).
+dom(b1b2).
+dom(b2b3).
+dom(b3b1).
+dom(s1).
+dom(s2). 
+dom(s3).
+
+% goal
+_ axiom perspectivity_line(L)  : (i(p3,L),i(p1,L),i(p2,L) => goal).
+_ axiom gap1 : (i(a1,b2b3) => goal).
+_ axiom gap2 : (i(b3,a1a2) => goal).
+
+% Desargues' assumptions: points, lines and incidences
+
+% triangle a1a2a3
+0 axiom ia1a2 : (true => i(a1,a1a2)).
+0 axiom ia2a1 : (true => i(a2,a1a2)).
+0 axiom ia2a3 : (true => i(a2,a2a3)).
+0 axiom ia3a2 : (true => i(a3,a2a3)).
+0 axiom ia3a1 : (true => i(a3,a3a1)).
+0 axiom ia1a3 : (true => i(a1,a3a1)).
+
+% triangle b1b2b3
+0 axiom ib1b2 : (true => i(b1,b1b2)).
+0 axiom ib2b1 : (true => i(b2,b1b2)).
+0 axiom ib2b3 : (true => i(b2,b2b3)).
+0 axiom ib3b2 : (true => i(b3,b2b3)).
+0 axiom ib3b1 : (true => i(b3,b3b1)).
+0 axiom ib1b3 : (true => i(b1,b3b1)).
+
+% lines through perspectivity point s and corresponding vertices
+0 axiom iss1  : (true => i(s,s1)).
+0 axiom iss2  : (true => i(s,s2)).
+0 axiom iss3  : (true => i(s,s3)).
+0 axiom ia1s1 : (true => i(a1,s1)).
+0 axiom ia2s2 : (true => i(a2,s2)).
+0 axiom ia3s3 : (true => i(a3,s3)).
+0 axiom ib1s1 : (true => i(b1,s1)).
+0 axiom ib2s2 : (true => i(b2,s2)).
+0 axiom ib3s3 : (true => i(b3,s3)).
+
+% meet a1a2,b1b2 in point p3
+0 axiom ip3a : (true => i(p3,a1a2)).
+0 axiom ip3b : (true => i(p3,b1b2)).
+
+% meet a2a3,b2b3 in point p1
+0 axiom ip1a : (true => i(p1,a2a3)).
+0 axiom ip1b : (true => i(p1,b2b3)).
+
+% meet a3a1,b3b1 in point p2
+0 axiom ip2a : (true => i(p2,a3a1)).
+1 axiom ip2b : (true => i(p2,b3b1)).
+
+% distinct points ai
+_ axiom diff_a1_a2 : (e(a1,a2) => false).
+_ axiom diff_a2_a3 : (e(a2,a3) => false).
+_ axiom diff_a3_a1 : (e(a3,a1) => false).
+
+% distinct points bi
+_ axiom diff_b1_b2 : (e(b1,b2) => false).
+_ axiom diff_b2_b3 : (e(b2,b3) => false).
+_ axiom diff_b3_b1 : (e(b3,b1) => false).
+
+% no corresponding edges in common
+_ axiom not12 : (e(a1a2,b1b2) => false). 
+_ axiom not23 : (e(a2a3,b2b3) => false). 
+_ axiom not31 : (e(a3a1,b3b1) => false).
+
+% equality
+_ axiom ref(X)     : (dom(X) => e(X,X)).     
+_ axiom sym(X,Y)   : (e(X,Y) => e(Y,X)).
+_ axiom tra(X,Y,Z) : (e(X,Y),e(Y,Z) => e(X,Z)).
+
+% congruence
+_ axiom conp(P,Q,L) : (e(P,Q),i(Q,L) => i(P,L)).
+_ axiom conl(P,L,M) : (i(P,L),e(L,M) => i(P,M)).
+
+% sorted incidence
+_ axiom sortp(P,L) : (i(P,L) => p(P)).
+_ axiom sortl(P,L) : (i(P,L) => l(L)).
+
+% projective uniqueness
+_ axiom unique(P,Q,L,M) : (i(P,L),i(P,M),i(Q,L),i(Q,M) => e(P,Q);e(L,M)).
+
+% projective geometry
+join(P,Q,L) axiom join(P,Q) : (p(P),p(Q) => dom(L),i(P,L),i(Q,L)).
+meet(L,M,P) axiom meet(L,M) : (l(L),l(M) => dom(P),i(P,L),i(P,M)).
+
+% pappus' axiom
+pappus(G,H,I) axiom papp(A,B,C,D,E,F,G,H,I,L,M,N,O,X,Y,S,T) : 
+(
+  i(A,L),i(B,L),i(C,L),i(D,M),i(E,M),i(F,M), % ABC on L, DEF on M
+  i(B,N),i(F,N),i(G,N),i(C,O),i(E,O),i(G,O), % meet BF,CE in G
+  i(C,X),i(D,X),i(H,X),i(A,Y),i(F,Y),i(H,Y), % meet CD,AF in H
+  i(A,S),i(E,S),i(I,S),i(B,T),i(D,T),i(I,T)  % meet AE,BD in I
+  => e(N,O);e(X,Y);e(S,T);                   % degenerations         
+     dom(U),i(G,U),i(H,U),i(I,U)             % G,H,I on line U
+).
+
+

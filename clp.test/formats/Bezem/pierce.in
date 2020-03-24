@@ -1,0 +1,13 @@
+:- dynamic p1/0,p2/0,p3/0,p4/0, p5/0, p7/0.
+
+% p1=F(((p -> q) -> p) -> p), p2=T((p -> q) -> p), 
+% p3=F(p), p4=F(p -> q), p5=T(p), p6=F(p), p7=F(q)
+
+
+name(pierce).
+
+_ axiom start: (true => p1).
+_ axiom ax_1: (p1 => p2,p3).
+_ axiom ax_2: (p2 => p4 ; p5).
+_ axiom ax_3: (p4 => p5,p7).
+_ axiom ax_gl: (p3,p5 => goal).

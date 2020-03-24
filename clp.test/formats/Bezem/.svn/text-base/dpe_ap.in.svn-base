@@ -1,0 +1,98 @@
+
+name(dpe_ap).
+
+:- dynamic 'T.all.2'/0, 'T.all.3'/0, 'T.all.5'/0, 'T.all.7'/0, 'T.all.9'/0, 'T.all.11'/0, 'T.all.13'/0, 'T.all.17'/0.
+:- dynamic 'T.EQUALISH'/2,'F.EQUALISH'/2.
+:- dynamic 'T.REWRITE'/2,'F.REWRITE'/2,'T.REFLEXIVE_REWRITE'/2,'F.REFLEXIVE_REWRITE'/2.
+:- dynamic 'T.or.1'/1,'T.or.4'/2,'T.or.6'/3,'T.or.8'/2,'T.or.10'/2,'T.or.12'/2,'T.or.16'/3,'T.ex.15'/2,'T.and.14'/3.
+:- dynamic 'T.GOAL'/0,'F.GOAL'/0.
+
+dom(a).
+dom(b). 
+dom(c).
+
+_ axiom tnd1(A,B):      ('T.REWRITE'(A,B),'F.REWRITE'(A,B) => false).
+_ axiom tnd2(A,B):      ('T.REFLEXIVE_REWRITE'(A,B),'F.REFLEXIVE_REWRITE'(A,B) => false).
+_ axiom tnd3(A,B):      ('T.EQUALISH'(A,B),'F.EQUALISH'(A,B) => false).
+_ axiom goal_ax :       ('T.GOAL','F.GOAL' => false).
+
+_ axiom ax0	:	(true       => 'F.GOAL', 'T.REFLEXIVE_REWRITE'(a,b), 'T.REFLEXIVE_REWRITE'(a,c), 
+                         'T.all.2', 'T.all.3', 'T.all.5', 'T.all.7', 'T.all.9', 'T.all.11', 'T.all.13', 'T.all.17').
+_ axiom ax1	:	('T.all.2',dom(A)       => 'T.or.1'(A)).
+
+_ axiom ax3(A)	:	('T.all.3',dom(A)         => 'T.EQUALISH'(A,A)).
+_ axiom ax4(A,B):	('T.all.5',dom(A),dom(B)         => 'T.or.4'(B,A)).
+
+_ axiom ax6(A,B,C):	('T.all.7',dom(A),dom(B),dom(C)         => 'T.or.6'(B,A,C)).
+
+_ axiom ax8(A,B):	('T.all.9',dom(A),dom(B)         => 'T.or.8'(A,B)).
+
+_ axiom ax10(A,B):	('T.all.11',dom(A),dom(B)        => 'T.or.10'(A,B)).
+
+_ axiom ax12(A,B):	('T.all.13',dom(A),dom(B)        => 'T.or.12'(A,B)).
+
+_ axiom ax14(A,B,C):	('T.all.17',dom(A),dom(B),dom(C)        => 'T.or.16'(A,B,C)).
+
+_ axiom ax17(B,C,D):	('T.and.14'(B,C,D) => 'T.REWRITE'(B,D), 'T.REWRITE'(C,D)).
+
+_ axiom ax2(A)	:	('T.or.1'(A)       => 'F.REFLEXIVE_REWRITE'(b,A); 'F.REFLEXIVE_REWRITE'(c,A); 'T.GOAL').
+_ axiom ax5(A,B):	('T.or.4'(B,A)     => 'F.EQUALISH'(A,B); 'T.EQUALISH'(B,A)).
+_ axiom ax7(A,B,C):	('T.or.6'(B,A,C)   => 'F.EQUALISH'(A,B); 'F.REFLEXIVE_REWRITE'(B,C); 'T.REFLEXIVE_REWRITE'(A,C)).
+_ axiom ax9(A,B):	('T.or.8'(A,B)     => 'F.EQUALISH'(A,B); 'T.REFLEXIVE_REWRITE'(A,B)).
+_ axiom ax11(A,B):	('T.or.10'(A,B)    => 'F.REWRITE'(A,B); 'T.REFLEXIVE_REWRITE'(A,B)).
+_ axiom ax13(A,B):	('T.or.12'(A,B)    => 'F.REFLEXIVE_REWRITE'(A,B); 'T.EQUALISH'(A,B); 'T.REWRITE'(A,B)).
+_ axiom ax15(A,B,C):	('T.or.16'(A,B,C)  => 'F.REWRITE'(A,B); 'F.REWRITE'(A,C); 'T.ex.15'(B,C)).
+
+
+_ axiom ax16(B,C):	('T.ex.15'(B,C)    => dom(D), 'T.and.14'(B,C,D)).
+
+/* commented out
+
+
+tR(V1,V2),fR(V1,V2) => false.
+tE(V1,V2),fE(V1,V2) => false.
+tRE(V1,V2),fRE(V1,V2) => false.
+tGOAL,fGOAL => false.
+true            => tAnd_18.
+tAnd_18                   => fGOAL, tRE(a,b), tRE(a,c), tAll_2, 
+     			     tAll_3, tAll_5, tAll_7, tAll_9,
+			     tAll_11, tAll_13, tAll_17.
+dom(A), tAll_2            => tOr_1(A).
+tOr_1(A)                  => fRE(b,A); fRE(c,A); tGOAL.
+dom(A), tAll_3            => tE(A,A).
+dom(A), dom(B), tAll_5    => tOr_4(B,A).
+tOr_4(B,A)                => fE(A,B); tE(B,A).
+dom(A), dom(B), dom(C), tAll_7 => tOr_6(B,A,C).
+tOr_6(B,A,C)              => fE(A,B); fRE(B,C); tRE(A,C).
+dom(A), dom(B), tAll_9    => tOr_8(A,B).
+tOr_8(A,B)                => fE(A,B); tRE(A,B).
+dom(A), dom(B), tAll_11   => tOr_10(A,B).
+tOr_10(A,B)               => fR(A,B); tRE(A,B).
+dom(A), dom(B), tAll_13   => tOr_12(A,B).
+tOr_12(A,B)               => fRE(A,B); tE(A,B); tR(A,B).
+dom(A), dom(B), dom(C), tAll_17 => tOr_16(A,B,C).
+tOr_16(A,B,C)             => fR(A,B); fR(A,C); tEx_15(B,C).
+tEx_15(B,C)               => dom(D), tAnd_14(B,C,D).
+tAnd_14(B,C,D)            => tR(B,D), tR(C,D). 
+
+
+
+
+
+tR(V1,V2),fR(V1,V2) => false.
+tE(V1,V2),fE(V1,V2) => false.
+tRE(V1,V2),fRE(V1,V2) => false.
+tGOAL,fGOAL => false.
+true	        => dom(a), dom(b), dom(c).
+dom(A)	                  => fRE(b,A); fRE(c,A); tGOAL.
+dom(A)			  => tE(A,A).
+dom(A), dom(B)		  => fE(A,B); tE(B,A).
+dom(A), dom(B), dom(C)	  => fE(A,B); fRE(B,C); tRE(A,C).
+dom(A), dom(B)		  => fE(A,B); tRE(A,B).
+dom(A), dom(B)		  => fR(A,B); tRE(A,B).
+dom(A), dom(B)		  => fRE(A,B); tE(A,B); tR(A,B).
+dom(A), dom(B), dom(C)	  => fR(A,B); fR(A,C); dom(D), tR(B,D), tR(C,D).
+
+
+
+*/

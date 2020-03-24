@@ -1,0 +1,9 @@
+%% was:
+%% true => p;dom(X),q(X).
+%% p => goal.
+%% q(X) => p,r.
+
+true => init.
+init => p;dom(X),q(X).
+p => goal.
+q(X) => p,r.

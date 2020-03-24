@@ -1,0 +1,8 @@
+:- dynamic a/1,b/2,p/0,q/0,r/1.
+
+name(test).
+
+_ axiom assump    : (true => p;dom(X),q(X)).
+_ axiom goal_p    : (p => goal).
+_ axiom goal_r(X) : (q(X) => p,r).
+

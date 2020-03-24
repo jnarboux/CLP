@@ -1,0 +1,47 @@
+% NB proof generation not supported for iterated existentials!
+
+% induction step in proof of self-lengthening theorem:
+% if r is locally lengthening itself, given a reduction of length n of
+% object a, any shorter reduction of a can be lengthened to length n
+
+name(len).
+
+:- dynamic e/2,s/2,lt/2,l_e/2,r/2,rn/3,mInus/3,aux0/3,aux1/3,aux2/4,aux/4.
+% s,lt,le for successor relation, less than, less than or equal
+% e,rn for equality of objects, reduction with specific length  
+% Trick: l_e(M,M) is occasionally used to express that M is a number,
+% for example, in e_or_s and arith4, or to preemt lo_len(X,Y,Z) with Z=Y. 
+
+% b and c endpoints, m < n+1 = n1 
+dom(a). dom(b). dom(c). dom(m). dom(n). dom(n1).
+
+_ axiom found(N,D) :(mInus(n1,m,N),rn(N,b,D) => goal).
+_ axiom assump     :(true => s(n,n1),lt(m,n1),rn(m,a,b),rn(n1,a,c)).
+
+_ axiom arith1(N1,M1,N,M) : (lt(N1,M1),s(N,N1),s(M,M1) => lt(N,M)).
+_ axiom arith2(N,M,L,M1,N1):(mInus(N,M,L),s(M,M1),s(N,N1) => mInus(N1,M1,L)).
+_ axiom arith3(X,Y,Z) :(l_e(X,Y),l_e(Y,Z) => l_e(X,Z)).
+_ axiom arith4(M) :(l_e(M,M) => lt(M,n);l_e(n,M)).
+
+_ axiom l_congr(X,Y,N,Z):(e(X,Y),rn(N,Y,Z) => rn(N,X,Z)).
+_ axiom e_or_s1(N,X,Y) :(rn(N,X,Y) => e(Y,X),mInus(n1,N,n1);dom(M),aux(M,N,X,Y)). 
+_ axiom e_or_s2(M,N,X,Y) :(aux(M,N,X,Y) => dom(Z),l_e(M,M),s(M,N),r(X,Z),rn(M,Z,Y)). 
+
+_ axiom r_rn(M,N,X,Y) :(s(M,N),rn(N,X,Y) => dom(U),r(X,U),rn(M,U,Y)).
+
+_ axiom shorter1(M,X,Y): (rn(M,X,Y),l_e(n,M) => dom(U),rn(n,X,U)).
+_ axiom shorter2(M,X,Y,N,Z,L):
+       (rn(M,X,Y),rn(N,Y,Z),l_e(L,M),mInus(n,L,N) => dom(U),rn(n,X,U)).
+
+_ axiom ih_slt1(M,X,Y,Z) :(lt(M,n),rn(M,X,Y),rn(n,X,Z) => dom(N),aux0(N,M,Y)).
+_ axiom ih_slt2(N,M,Y)   :(   aux0(N,M,Y) =>   dom(U),mInus(n,M,N),rn(N,Y,U)).
+
+_ axiom lo_len1(X,Y,Z)   :(r(X,Y),r(X,Z) => dom(N),aux1(N,Y,Z)).
+_ axiom lo_len2(N,Y,Z)   :(  aux1(N,Y,Z) => dom(M),aux2(M,N,Y,Z)).
+_ axiom lo_len3(M,N,Y,Z) :(aux2(M,N,Y,Z) => dom(U),l_e(M,M),l_e(M,N),rn(N,Y,U),rn(M,Z,U)).
+
+ 
+
+% allows axiom 0 to be applied only once
+enabled(0,[]).
+next(0,[],1).

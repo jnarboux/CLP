@@ -1,0 +1,10 @@
+
+true => dom(a).
+
+dom(X) => p(X) ; q(X) ; r(X).
+
+p(a) => goal.
+
+q(a) => goal.
+
+r(a) => goal.

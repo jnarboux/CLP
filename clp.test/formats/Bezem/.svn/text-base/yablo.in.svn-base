@@ -1,0 +1,44 @@
+% p(n) iff not p(k) for all k>n  leads to a contradiction
+% it suffices that the domain is non-empty and < is transitive and serial
+
+name(yab).
+
+:- dynamic p/1,q/2,less/2.
+
+% domain element o
+
+dom(o).
+
+%dom(g(o)).
+% axiom start: (true => less(o,g(o)),p(g(o))).
+
+% basic facts on less
+
+_ axiom trans(X,Y,Z) :(less(X,Y),less(Y,Z) => less(X,Z)).
+
+% the systematic translation based on the tableaux method yields:
+
+_ axiom l2r(X,Y): (p(X),less(X,Y),p(Y) => false).
+
+_ axiom r2l(X,Y): (q(X,Y) => p(X) ; less(X,Y),p(Y)). 
+
+s(X) axiom ser(X) :(dom(X) => dom(f(X)),less(X,f(X))). 
+
+r(X) axiom aux(X) :(dom(X) => dom(g(X)),q(X,g(X))).
+
+% NB backtracking includes the guard, so there are unnecessary steps.
+% Trick: strategy depends on state p(o)!!!
+
+
+enabled(r(o),[]).
+next(r(o),[],1).
+enabled(s(o),1):- p(o).
+next(s(o),1,2).
+enabled(r(f(o)),2).
+next(r(f(o)),2,3).
+enabled(s(g(o)),3).
+next(s(g(o)),3,4).
+enabled(r(f(g(o))),4).
+next(r(f(g(o))),4,5).
+
+

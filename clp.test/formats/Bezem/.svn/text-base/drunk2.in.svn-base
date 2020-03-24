@@ -1,0 +1,34 @@
+name(d).
+
+:- dynamic f_IMP_001/0.
+:- dynamic t_AND_002/0.
+:- dynamic t_IMP_003/0.
+:- dynamic t_EXISTS_004/0.
+:- dynamic t_FORALL_005/0.
+:- dynamic t_AND_006/1.
+:- dynamic t_FORALL_007/0.
+:- dynamic t_IMP_008/1.
+:- dynamic f_AND_009/1.
+:- dynamic tNEG_PSI0/0.
+:- dynamic fNEG_PSI0/0.
+:- dynamic tGOAL0/0.
+:- dynamic fGOAL0/0.
+:- dynamic tNOTD1/1.
+:- dynamic fNOTD1/1.
+:- dynamic tD1/1.
+:- dynamic fD1/1.
+
+dom(a).
+
+_ axiom bot01:             (tNEG_PSI0, fNEG_PSI0 => goal).
+_ axiom bot02:             (tGOAL0, fGOAL0 => goal).
+_ axiom bot03(V1):         (tNOTD1(V1), fNOTD1(V1) => goal).
+_ axiom bot04(V1):         (tD1(V1), fD1(V1) => goal).
+
+_ axiom start:  (true => f_IMP_001).
+_ axiom ax001:           (f_IMP_001 => fGOAL0,  t_FORALL_007, t_FORALL_005, t_IMP_003).
+_ axiom ax003:           (t_IMP_003 => fNEG_PSI0; t_EXISTS_004).
+_ axiom ax005(A):        (dom(A), t_FORALL_005 =>  tD1(A), tNEG_PSI0).
+_ axiom ax007(A):        (dom(A), t_FORALL_007 =>  tGOAL0; fD1(A); fNOTD1(A)).
+
+_ axiom ax004:           (t_EXISTS_004 => dom(A), tNOTD1(A)).

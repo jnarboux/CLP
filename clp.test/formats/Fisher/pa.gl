@@ -1,0 +1,12 @@
+true => dom(c0).
+
+true => nat(c0).
+
+nat(X) => plus(X,c0,X).
+plus(X,Y,Z),s(Y,Y1),s(Z,Z1) => plus(X,Y1,Z1).
+
+nat(X),plus(c0,c0,c0) => plus(c0,X,X) ;
+dom(X),dom(Y),plus(c0,X,X),s(X,Y),notplus(c0,Y,Y).
+
+
+nat(X) => dom(y),nat(y),s(X,Y).

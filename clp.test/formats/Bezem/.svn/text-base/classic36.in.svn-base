@@ -1,0 +1,19 @@
+% Problem 36 of Isabelle's Classic Benchmarks
+
+
+name(c36isa).
+
+:- dynamic p/2,j/2,g/2,h/2.
+
+% domain elements a
+dom(a). 
+
+_ axiom found(X):(h(a,X) => goal).
+
+_ axiom pifj(X,Y) :(j(X,Y) => p(X,Y)).
+_ axiom pifg(X,Y) :(g(X,Y) => p(X,Y)).
+_ axiom hifpj(X,Y) :(p(X,Y),j(Y,Z) => h(X,Z)).
+_ axiom hifpg(X,Y) :(p(X,Y),g(Y,Z) => h(X,Z)).
+
+_ axiom jser(X,Y) :(dom(X) => dom(Y),j(X,Y)).
+_ axiom gser(X,Y) :(dom(X) => dom(Y),g(X,Y)).

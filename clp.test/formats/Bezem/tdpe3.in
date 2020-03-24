@@ -1,0 +1,52 @@
+%% Total mass: 2.1000001
+
+name(tdpe2).
+
+:- dynamic tTRANSITIVE_REFLEXIVE_REWRITE/2.
+:- dynamic tEQUALISH/2.
+:- dynamic tREWRITE/2.
+:- dynamic tAnd_28/3.
+:- dynamic tAnd_24/3.
+:- dynamic tAnd_20/3.
+:- dynamic tExists_22/2.
+:- dynamic tExists_26/2.
+:- dynamic tExists_30/2.
+
+
+_ axiom begin:	(true => dom(b), dom(c), dom(a)).
+
+_ axiom ax01(A):	(tTRANSITIVE_REFLEXIVE_REWRITE(b,A), tTRANSITIVE_REFLEXIVE_REWRITE(c,A) => false).
+
+_ axiom ax04(A,B,C):	(tREWRITE(a,A), tTRANSITIVE_REFLEXIVE_REWRITE(A,B), tTRANSITIVE_REFLEXIVE_REWRITE(A,C) => tExists_26(B,C)).
+
+_ axiom ax07(A,B,C):	(tREWRITE(A,B), tREWRITE(A,C) => tExists_22(B,C)).
+
+_ axiom ax10(A,B,C):	(tTRANSITIVE_REFLEXIVE_REWRITE(A,B), tTRANSITIVE_REFLEXIVE_REWRITE(B,C) => tTRANSITIVE_REFLEXIVE_REWRITE(A,C)).
+
+_ axiom ax11(A,B):	(tREWRITE(A,B) => tTRANSITIVE_REFLEXIVE_REWRITE(A,B)).
+
+_ axiom ax12(A,B):	(tEQUALISH(A,B) => tTRANSITIVE_REFLEXIVE_REWRITE(A,B)).
+
+_ axiom ax13(A,B):	(tEQUALISH(A,B) => tEQUALISH(B,A)).
+
+_ axiom ax14:	(true => tTRANSITIVE_REFLEXIVE_REWRITE(a,c)).
+
+_ axiom ax15:	(true => tTRANSITIVE_REFLEXIVE_REWRITE(a,b)).
+
+_ axiom ax16(A):	(dom(A), true => tEQUALISH(A,A)).
+
+_ axiom ax25(D,B,C):	(tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D) => tAnd_24(B,C,D)).
+_ axiom ax28(D,B,C):	(tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D) => tAnd_20(B,C,D)).
+_ axiom ax22(A,B,C):	(tREWRITE(A,C), tTRANSITIVE_REFLEXIVE_REWRITE(C,B) => tAnd_28(A,C,B)).
+
+_ axiom ax18(B,C):	(tExists_22(B,C) => dom(D), tAnd_20(B,C,D)).
+_ axiom ax08(D,B,C):	(tAnd_20(B,C,D) => tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D)).
+
+_ axiom ax19(B,C):	(tExists_26(B,C) => dom(D), tAnd_24(B,C,D)).
+_ axiom ax05(D,B,C):	(tAnd_24(B,C,D) => tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D)).
+
+_ axiom ax17(A,B):	(tTRANSITIVE_REFLEXIVE_REWRITE(A,B) => tEQUALISH(A,B); tExists_30(A,B)).
+_ axiom ax20(A,B):	(tExists_30(A,B) => dom(C), tAnd_28(A,C,B)).
+_ axiom ax02(A,B,C):	(tAnd_28(A,C,B) => tREWRITE(A,C), tTRANSITIVE_REFLEXIVE_REWRITE(C,B)).
+
+

@@ -1,0 +1,10 @@
+
+name(eq).
+
+dom(a). dom(b). dom(c).
+
+_ axiom goal_ax: (dom(a), dom(c), a=c => goal).
+
+_ axiom init:(true => b=a, b=c).
+
+

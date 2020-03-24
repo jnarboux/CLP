@@ -1,0 +1,21 @@
+true => name(anc), dom(berta), dom(ada), dom(cyril), dom(cecilie), dom(david), dom(eve).
+
+ancestor(david,ada) => goal.
+
+true => parent(berta,ada).
+true => parent(cyril,berta).
+true => parent(cecilie,berta).
+true => parent(david,cyril).
+dom(X) => ancestor(eve,X).
+parent(X,Y) => ancestor(X,Y).
+ancestor(X,Y),ancestor(Y,Z)=>ancestor(X,Z).
+
+% -------------------------------------------------------------
+% log(number,context,rule(instantiation),antecedent,consequent)
+% -------------------------------------------------------------
+% 
+% This is an example of a bottom-up derivation of a goal.
+% If one does this systematically one gets the minimal Herbrand
+% model. Prolog itself builds top-down derivations.
+% Soundness and completeness theorems ensure that *systematic*
+% top-down gives proves the same closed atoms as *systematic* bottom-up.

@@ -1,0 +1,9 @@
+
+true => dom(n1), dom(n2), dom(n3), dom(n4), dom(n5), dom(n6).
+r(X,Y),r(Y,Z),r(X,Z) => false.
+g(X,Y),g(Y,Z),g(X,Z) => false.
+r(X,Y),g(X,Y) => false.
+true => lt(n1,n2),lt(n2,n3),lt(n3,n4),lt(n4,n5),lt(n5,n6).
+lt(X,Y),lt(Y,Z) => lt(X,Z).
+lt(X,Y) => r(X,Y);g(X,Y).
+

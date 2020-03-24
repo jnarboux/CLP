@@ -1,0 +1,46 @@
+
+true => dom(a), dom(b), dom(c), dom(d), dom(e), dom(f), dom(g), dom(h), dom(i).
+true => dom(l), dom(m), dom(n), dom(o), dom(p), dom(q), dom(r), dom(s).
+
+true => col(a,b,c,l),col(d,e,f,m).
+true => col(b,f,g,n),col(c,e,g,o).
+true => col(b,d,h,p),col(a,e,h,q).
+true => col(c,d,i,r),col(a,f,i,s).
+
+pl(a,m) => goal.
+pl(b,m) => goal.
+pl(c,m) => goal.
+pl(d,l) => goal.
+pl(e,l) => goal.
+pl(f,l) => goal.
+pl(g,U),pl(h,U),pl(i,U) => goal.
+
+col(P,Q,R,L) => pl(P,L).
+col(P,Q,R,L) => pl(Q,L).
+col(P,Q,R,L) => pl(R,L).
+
+pl(P,L) => ep(P,P).     %a bit special indeed!
+ep(P,Q) => ep(Q,P).
+ep(P,Q),ep(Q,R) => ep(P,R).
+
+pl(P,L) => el(L,L).     %a bit special indeed!
+el(L,M) => el(M,L).
+el(L,M),el(M,N) => el(L,N).
+
+ep(P,Q),pl(Q,L) => pl(P,L).
+pl(P,L),el(L,M) => pl(P,M).
+
+
+col(A,B,C,L),col(D,E,F,M),                         % ABC on L, DEF on M
+col(B,F,G,N),col(C,E,G,O),                            %cross BF,CE in G 
+col(B,D,H,P),col(A,E,H,Q),                            %cross BD,AE in H
+col(C,D,I,R),col(A,F,I,S)                             %cross CD,AF in I
+=> dom(T),col(G,H,I,T);                               % G,H,I on line T 
+   el(N,O);el(P,Q);el(R,S).
+
+ 
+pl(P,L),pl(P,M),pl(Q,L),pl(Q,M) => ep(P,Q); el(L,M).
+
+ep(P,P),ep(Q,Q) => dom(L),pl(P,L),pl(Q,L).
+
+el(L,L),el(M,M) => dom(P),pl(P,L),pl(P,M).

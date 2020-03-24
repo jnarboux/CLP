@@ -1,0 +1,58 @@
+%% Total mass: 80.0
+
+name('COM008+1.1').
+
+:- dynamic tEQUALISH/2.
+:- dynamic tREWRITE/2.
+:- dynamic tTRANSITIVE_REFLEXIVE_REWRITE/2.
+:- dynamic fEQUALISH/2.
+:- dynamic fREWRITE/2.
+:- dynamic fTRANSITIVE_REFLEXIVE_REWRITE/2.
+
+_ axiom consts: (true => dom(b), dom(c), dom(a)).
+
+_ axiom botEQUALISH(V1,V2):     (tEQUALISH(V1,V2), fEQUALISH(V1,V2) => false).
+_ axiom botREWRITE(V1,V2):      (tREWRITE(V1,V2), fREWRITE(V1,V2) => false).
+_ axiom botTRANSITIVE_REFLEXIVE_REWRITE(V1,V2): (tTRANSITIVE_REFLEXIVE_REWRITE(V1,V2), fTRANSITIVE_REFLEXIVE_REWRITE(V1,V2) => false).
+
+_ axiom ax00(A):     (fEQUALISH(A,A) => 
+                          false).
+
+_ axiom ax01(A):     (tTRANSITIVE_REFLEXIVE_REWRITE(b,A), tTRANSITIVE_REFLEXIVE_REWRITE(c,A) => 
+                          false).
+
+_ axiom ax02:        (true => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(a,b)).
+
+_ axiom ax03:        (true => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(a,c)).
+
+_ axiom ax04(B,A):   (fEQUALISH(B,A) => 
+                          fEQUALISH(A,B)).
+
+_ axiom ax05(A,B):   (tREWRITE(A,B) => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(A,B)).
+
+_ axiom ax06(A,B,C): (tTRANSITIVE_REFLEXIVE_REWRITE(A,B), tTRANSITIVE_REFLEXIVE_REWRITE(B,C) => 
+                          tTRANSITIVE_REFLEXIVE_REWRITE(A,C)).
+
+_ axiom ax07(A,B):   (dom(A), dom(B), true => 
+                          fEQUALISH(A,B); tTRANSITIVE_REFLEXIVE_REWRITE(A,B)).
+
+1 axiom ax08(B,A,C): (tREWRITE(A,B), tREWRITE(A,C) => 
+                          dom(D), tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D)).
+
+2 axiom ax09(B,A,C): (tREWRITE(a,A), tTRANSITIVE_REFLEXIVE_REWRITE(A,B), tTRANSITIVE_REFLEXIVE_REWRITE(A,C) => 
+                          dom(D), tTRANSITIVE_REFLEXIVE_REWRITE(B,D), tTRANSITIVE_REFLEXIVE_REWRITE(C,D)).
+
+3 axiom ax10(A,B):   (tTRANSITIVE_REFLEXIVE_REWRITE(A,B), fEQUALISH(A,B) => 
+                          dom(C), tREWRITE(A,C), tTRANSITIVE_REFLEXIVE_REWRITE(C,B)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+enabled(X,X).
+enabled(N,[]):-number(N).
+
+next(_,[],1).
+next(_,1,2).
+next(_,2,3).
+next(_,3,1).

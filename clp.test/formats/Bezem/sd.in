@@ -1,0 +1,47 @@
+name('DbyS').                             % Desargues' Axiom by Skolem
+
+:- dynamic p/1,l/1,i/2,e/2. % unary predicates: p for point, l for line
+                   % binary predicates: i for incidence, e for equality
+
+dom(a). dom(b). dom(c).   % three constants a,b,c in the domain
+ 
+_ axiom points: (true => p(a),p(b),p(c)). % a,b,c are points
+
+% goal is proved if a,b,c are collinear
+_ axiom goal_proved(L): (i(a,L),i(b,L),i(c,L) => goal). 
+
+_ axiom sortp(P,L) : (i(P,L) => p(P)).    % incidence pairs have points left
+_ axiom sortl(P,L) : (i(P,L) => l(L)).    % and lines right
+
+% equality axioms
+_ axiom p_ref(X)    : (p(X) => e(X,X)).   % reflexivity for points
+_ axiom l_ref(X)    : (l(X) => e(X,X)).   % reflexivity for lines
+_ axiom sym(X,Y)    : (e(X,Y) => e(Y,X)). % symmetry 
+_ axiom tra(X,Y,Z)  : (e(X,Y),e(Y,Z) => e(X,Z)). %transitivity 
+
+% congruence axioms 
+_ axiom conp(P,Q,L) : (e(P,Q),i(Q,L) => i(P,L)). % equal points lie on the same lines
+_ axiom conl(P,L,M) : (i(P,L),e(L,M) => i(P,M)). % equal lines have the same points
+
+%projective geometry
+_ axiom line(P,Q) : (p(P),p(Q) => dom(L),i(P,L),i(Q,L)).           % Axiom 1'
+_ axiom       point(L,M) : (l(L),l(M) => dom(P),i(P,L),i(P,M)).           % Axiom 2'
+_ axiom  unique(P,Q,L,M) : (i(P,L),i(P,M),i(Q,L),i(Q,M) => e(P,Q);e(L,M)).% Axiom 3'
+
+% Desargues by Skolem; capital letters L prefix Skolem's names for lines
+% in order to comply with Prolog's convention on variables
+_ axiom wrong(A1,B1,C1,A2,B2,C2,La1,Lb1,Lc1,La2,Lb2,Lc2,P,Ld,Le,Lf,D,E,F,Lp): (
+i(A1,Lb1),i(A1,Lc1),i(B1,La1),i(B1,Lc1),i(C1,La1),i(C1,Lb1), %triangle1
+i(A2,Lb2),i(A2,Lc2),i(B2,La2),i(B2,Lc2),i(C2,La2),i(C2,Lb2), %triangle2
+i(A1,Ld),i(A2,Ld),i(P,Ld), % \
+i(B1,Le),i(B2,Le),i(P,Le), % - P is point of perspectivity
+i(C1,Lf),i(C2,Lf),i(P,Lf), % /
+%line Lp is the candidate perspectivity line through D and E 
+i(D,La1),i(D,La2),i(D,Lp),i(E,Lb1),i(E,Lb2),i(E,Lp),i(F,Lc1),i(F,Lc2) =>
+%on which F should lie as well, or a pair of corresponding edges coincides
+i(F,Lp);e(La1,La2);e(Lb1,Lb2);e(Lc1,Lc2)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%enabled(abc(P,Q),[]) :- member(P,[a,b,c]),member(Q,[a,b,c]),P \= Q.
+%next(abc(_,_),[],[]).

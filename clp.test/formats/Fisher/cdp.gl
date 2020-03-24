@@ -1,0 +1,14 @@
+true => dom(a), dom(b), dom(c).
+
+true => rt(a,b),r(a,c).
+dom(X),r(b,X),rt(c,X) => goal.
+
+r(X,Y) => rt(X,Y).
+rt(X,Y),rt(Y,Z) => rt(X,Z).
+rt(X,Y) => r(X,Y);dom(U),rt(X,U),rt(U,Y).
+
+rt(a,X),rt(X,b),r(a,Y) => dom(U),r(X,U),rt(Y,U).
+rt(a,X),rt(X,b),r(X,Y) => dom(U),r(b,U),rt(Y,U).
+
+r(X,Y),r(X,Z) => dom(U),r(Y,U),r(Z,U).
+

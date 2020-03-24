@@ -1,0 +1,77 @@
+% Pappus1 => Pappus2 in projective planes
+
+name(pp).
+
+:- dynamic ep/2,el/2,pl/2,col/4,or2/3,or3/4,or6/8.
+%ep,el = equality for points and lines, resp. 
+%pl = point-line incidence (deliberately asymmetric!)
+%col = point-point-point-line collinearity
+%or's are auxiliary, to break down large disjunctions into binary ones 
+
+%points 
+dom(a). dom(b). dom(c). dom(d). dom(e). dom(f). dom(g). dom(h). dom(i).
+%lines 
+dom(l). dom(m). dom(n). dom(o). dom(p). dom(q). dom(r). dom(s).
+
+%Pappus2 assumptions, same as in Pappus1
+_ axiom assump1 : (true => col(a,b,c,l),col(d,e,f,m)). %a,b,c on l, etc.
+_ axiom assump2 : (true => col(b,f,g,n),col(c,e,g,o)).
+_ axiom assump3 : (true => col(b,d,h,p),col(a,e,h,q)).
+_ axiom assump4 : (true => col(c,d,i,r),col(a,f,i,s)).
+
+%Pappus2 conclusions
+_ axiom goal1    : (el(n,o) => goal).
+_ axiom goal2    : (el(p,q) => goal).
+_ axiom goal3    : (el(s,r) => goal).
+_ axiom goal4(U) : (el(U,U),pl(g,U),pl(h,U),pl(i,U) => goal).
+%not using col(g,h,i,U) for efficiency reasons ...
+
+%collinearity, we avoid the symmetries inflicted by col_intro 
+_ axiom col_elim1(P,Q,R,L) : (col(P,Q,R,L) => pl(P,L)).
+_ axiom col_elim2(P,Q,R,L) : (col(P,Q,R,L) => pl(Q,L)).
+_ axiom col_elim3(P,Q,R,L) : (col(P,Q,R,L) => pl(R,L)).
+% axiom col_intro(P,L,Q,R) : (pl(P,L),pl(Q,L),pl(R,L) => col(P,Q,R,L)).
+
+%breaking down a long disjunction into binary ones 
+%the reason is that proof generation is implemented only
+%for binary disjunctions (sorry for that ...)  
+_ axiom or_6(A,B,C,M,D,E,F,L) : (or6(A,B,C,M,D,E,F,L) => 
+                                  or3(A,B,C,M);or3(D,E,F,L)).
+%or3(P,Q,R,L) expresses that at least one of P,Q,R lies on L
+_ axiom or_3(P,Q,R,L)         : (or3(P,Q,R,L) => pl(P,L);or2(Q,R,L)).
+_ axiom or_2(Q,R,L)           : (or2(Q,R,L) => pl(Q,L);pl(R,L)).
+
+%equality for points
+_ axiom pref(P,L)   :  (pl(P,L) => ep(P,P)).     %a bit special indeed!
+_ axiom psym(P,Q)   :  (ep(P,Q) => ep(Q,P)).
+_ axiom ptra(P,Q,R) :  (ep(P,Q),ep(Q,R) => ep(P,R)).
+
+%equality for lines
+_ axiom lref(P,L)   :  (pl(P,L) => el(L,L)).     %a bit special indeed!
+_ axiom lsym(L,M)   :  (el(L,M) => el(M,L)).
+_ axiom ltra(L,M,N) :  (el(L,M),el(M,N) => el(L,N)).
+
+%congruence
+_ axiom pcon(P,Q,L) :  (ep(P,Q),pl(Q,L) => pl(P,L)).
+_ axiom lcon(P,L,M) :  (pl(P,L),el(L,M) => pl(P,M)).
+
+%projective uniqueness
+1 axiom unique(P,L,M,Q):(pl(P,L),pl(P,M),pl(Q,L),pl(Q,M) => ep(P,Q); el(L,M)).
+
+%projective incidence axiom
+2 axiom line(P,Q) : (ep(P,P),ep(Q,Q) => dom(L),pl(P,L),pl(Q,L)).
+
+%Pappus1: A,B,C on L not on M, D,E,F on M not on L, then ...
+3 axiom papp1(A,B,C,L,D,E,F,M,G,N,O,H,P,Q,I,R,S) : (
+col(A,B,C,L),col(D,E,F,M),                         % ABC on L, DEF on M
+col(B,F,G,N),col(C,E,G,O),                            %cross BF,CE in G 
+col(B,D,H,P),col(A,E,H,Q),                            %cross BD,AE in H
+col(C,D,I,R),col(A,F,I,S)                             %cross CD,AF in I
+=> dom(T),col(G,H,I,T);                               % G,H,I on line T 
+   or6(A,B,C,M,D,E,F,L)).               %A,B or C on M or D,E or F on L
+
+_ axiom point(L,M) : (el(L,L),el(M,M) => dom(P),pl(P,L),pl(P,M)).
+
+
+
+

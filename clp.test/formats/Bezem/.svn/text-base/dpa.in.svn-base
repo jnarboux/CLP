@@ -1,0 +1,47 @@
+%% Total mass: 2.7
+
+name('COM007+1.0').
+
+:- dynamic tREFLEXIVE_REWRITE/2.
+:- dynamic tEQUALISH/2.
+:- dynamic tREWRITE/2.
+:- dynamic fREFLEXIVE_REWRITE/2.
+:- dynamic fEQUALISH/2.
+:- dynamic fREWRITE/2.
+
+_ axiom consts: (true => dom(a), dom(b), dom(c)).
+
+_ axiom botREFLEXIVE_REWRITE(V1,V2): tREFLEXIVE_REWRITE(V1,V2),
+fREFLEXIVE_REWRITE(V1,V2) => false.
+_ axiom botEQUALISH(V1,V2):     tEQUALISH(V1,V2), fEQUALISH(V1,V2) => false.
+_ axiom botREWRITE(V1,V2):      tREWRITE(V1,V2), fREWRITE(V1,V2) => false.
+
+_ axiom ax0(A):      (tREFLEXIVE_REWRITE(b,A), tREFLEXIVE_REWRITE(c,A) =>
+                          false).
+
+_ axiom ax1:         (true =>
+                          tREFLEXIVE_REWRITE(a,b)).
+
+_ axiom ax2:         (true =>
+                          tREFLEXIVE_REWRITE(a,c)).
+
+_ axiom ax3(A):      (dom(A), true =>
+                          tEQUALISH(A,A)).
+
+_ axiom ax4(A,B):    (tEQUALISH(A,B) =>
+                          tEQUALISH(B,A)).
+
+_ axiom ax5(A,B,C):  (tEQUALISH(A,B), tREFLEXIVE_REWRITE(B,C) =>
+                          tREFLEXIVE_REWRITE(A,C)).
+
+_ axiom ax6(A,B):    (tEQUALISH(A,B) =>
+                          tREFLEXIVE_REWRITE(A,B)).
+
+_ axiom ax7(A,B):    (tREWRITE(A,B) =>
+                          tREFLEXIVE_REWRITE(A,B)).
+
+_ axiom ax8(A,B):    (tREFLEXIVE_REWRITE(A,B) =>
+                          tEQUALISH(A,B); tREWRITE(A,B)).
+
+_ axiom ax9(B,A,C):  (tREWRITE(A,B), tREWRITE(A,C) =>
+                          dom(D), tREWRITE(B,D), tREWRITE(C,D)). 

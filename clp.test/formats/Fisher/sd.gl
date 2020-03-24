@@ -1,0 +1,14 @@
+true => dom(a)  ,  dom(b)  ,  dom(c)  ,  p(a),p(b),p(c). 
+i(a,L),i(b,L),i(c,L) => goal.
+i(P,L) => p(P).
+i(P,L) => l(L).
+p(X) => e(X,X).
+l(X) => e(X,X).
+e(X,Y) => e(Y,X).
+e(X,Y),e(Y,Z) => e(X,Z).
+e(P,Q),i(Q,L) => i(P,L).
+i(P,L),e(L,M) => i(P,M).
+p(P),p(Q) => dom(L),i(P,L),i(Q,L).
+l(L),l(M) => dom(P),i(P,L),i(P,M).
+i(P,L),i(P,M),i(Q,L),i(Q,M) => e(P,Q);e(L,M).
+i(A1,Lb1),i(A1,Lc1),i(B1,La1),i(B1,Lc1),i(C1,La1),i(C1,Lb1),i(A2,Lb2),i(A2,Lc2),i(B2,La2),i(B2,Lc2),i(C2,La2),i(C2,Lb2),i(A1,Ld),i(A2,Ld),i(P,Ld),i(B1,Le),i(B2,Le),i(P,Le),i(C1,Lf),i(C2,Lf),i(P,Lf),i(D,La1),i(D,La2),i(D,Lp),i(E,Lb1),i(E,Lb2),i(E,Lp),i(F,Lc1),i(F,Lc2) => i(F,Lp);e(La1,La2);e(Lb1,Lb2);e(Lc1,Lc2).

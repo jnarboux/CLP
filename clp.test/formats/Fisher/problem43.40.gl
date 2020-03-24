@@ -1,0 +1,17 @@
+true => dom(g0d).
+
+tP(V1,V2), fP(V1,V2) => false.
+tQ(V1,V2), fQ(V1,V2) => false.
+tOr_27(Y,X), fQ(X,Y), fQ(Y,X) =>  false.
+fAnd_14(X,Y) => tAnd_22(X,Y), fQ(X,Y), tExists_21(X,Y).
+fQ(X,Y) => fAnd_14(X,Y).
+fForall_12(X,Y) => fAnd_14(X,Y).
+fOr_10(X,Z,Y) => fForall_12(X,Y).
+tOr_17(X,Z,Y), fP(Z,Y) => tP(Z,X).
+fAnd_6(X,Z,Y) => fOr_10(X,Z,Y); tAnd_7(X,Z,Y), fP(Z,X), fP(Z,Y).
+tOr_15(X,Z,Y) => fP(Z,X); fP(Z,Y).
+tOr_25(Y,X) =>  fQ(X,Y); fQ(Y,X).
+dom(Y), fP(Z,X) => fAnd_6(X,Z,Y).
+dom(X), fP(Z,Y) => fAnd_6(X,Z,Y).
+tExists_21(X,Y) => dom(Z), tOr_15(X,Z,Y), tOr_17(X,Z,Y).
+true =>  dom(Y), dom(X), tOr_25(Y,X), tOr_27(Y,X).

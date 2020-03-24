@@ -1,0 +1,15 @@
+true => dom(a), dom(b), dom(c).
+
+true => rr(a,b).
+true =>  r(a,c).
+dom(X),rr(c,X),r(b,X) => goal.
+
+dom(X) => e(X,X).
+r(X,Y),e(X,Z) => r(Z,Y).
+e(X,Y) => rr(X,Y).
+r(X,Y) => rr(X,Y).
+rr(X,Y),rr(Y,Z) => rr(X,Z).
+r(a,X),rr(X,b),r(X,Y) => dom(U),rr(Y,U),r(b,U).
+r(X,Y),r(X,Z) => dom(U),r(Z,U),r(Y,U).
+rr(X,Y) => e(X,Y);dom(Z),r(X,Z),rr(Z,Y). 
+
